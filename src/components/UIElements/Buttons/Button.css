@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
+.button {
+  margin-top: 0.5rem;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  cursor: pointer;
+}
+
+.default {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  color: #f5f5f5;
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
+  border-color: #1234ff;
+  border: 2px solid;
+  border-radius: 10px;
+}
+.default:hover {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+.danger {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f15a5a;
+  color: #f5f5f5;
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
+  border-color: #f15a5a;
+  border-radius: 10px;
+  border: 2px solid;
+}
+
+.danger:hover {
+  background-color: #f5f5f5;
+  color: #f15a5a;
+}

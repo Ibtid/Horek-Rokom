@@ -1,0 +1,9 @@
+.admin__body {
+  display: flex;
+  justify-content: center;
+  background-color: #f1f5f5;
+}
+
+.admin__showcase {
+  flex: 0.7;
+}
