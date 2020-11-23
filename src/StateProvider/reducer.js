@@ -64,7 +64,7 @@ const reducer = (state, action) => {
     case 'ADD_PRODUCT':
       return {
         ...state,
-        product: [...state.product, action.item],
+        products: [...state.products, action.product],
       };
     default:
       return state;

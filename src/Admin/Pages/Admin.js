@@ -5,8 +5,10 @@ import { DummyProducts } from '../../components/Products/DummyProducts';
 import { v4 as uuidv4 } from 'uuid';
 import './Admin.css';
 import NewProduct from '../Components/NewProducts/NewProduct';
+import { useStateValue } from '../../StateProvider/StateProvider';
 
 const Admin = () => {
+  const [state, dispatch] = useStateValue();
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState('');
@@ -21,6 +23,22 @@ const Admin = () => {
 
   const handleImage = (event) => {
     setImage(URL.createObjectURL(event.target.files[0]));
+  };
+
+  const addProduct = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: 'ADD_PRODUCT',
+      product: {
+        id: uuidv4(),
+        name: name,
+        price: price,
+        image: image,
+      },
+    });
+    setImage('');
+    setName('');
+    setPrice(0);
   };
 
   const handleSubmit = (event) => {
@@ -46,7 +64,7 @@ const Admin = () => {
             handleImage={handleImage}
             handleName={handleName}
             handlePrice={handlePrice}
-            handleSubmit={handleSubmit}
+            handleSubmit={addProduct}
           />
         </div>
       </div>
