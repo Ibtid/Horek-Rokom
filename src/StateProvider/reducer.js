@@ -66,6 +66,20 @@ const reducer = (state, action) => {
         ...state,
         products: [...state.products, action.product],
       };
+    case 'REMOVE_PRODUCT':
+      const index = state.products.findIndex(
+        (product) => product.id === action.id
+      );
+      let newProducts = [...state.products];
+      if (index >= 0) {
+        newProducts.splice(index, 1);
+      } else {
+        console.warn('no products');
+      }
+      return {
+        ...state,
+        products: newProducts,
+      };
     default:
       return state;
   }

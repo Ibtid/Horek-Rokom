@@ -4,9 +4,20 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { motion } from 'framer-motion';
 import './AdminProduct.css';
+import { useStateValue } from '../../../StateProvider/StateProvider';
+
 const AdminProduct = (props) => {
+  const [state, dispatch] = useStateValue();
   const deleteIcon = <DeleteIcon />;
   const viewIcon = <VisibilityIcon />;
+
+  const removeProduct = () => {
+    dispatch({
+      type: 'REMOVE_PRODUCT',
+      id: props.id,
+    });
+  };
+
   return (
     <motion.div animate={{ scale: 0.9 }} transition className='adminProduct'>
       <div className='adminProduct__card'>
@@ -29,7 +40,12 @@ const AdminProduct = (props) => {
         </div>
         <div className='adminProduct__buttons'>
           <Buttons icon={viewIcon} type='default' message='VIEW DETAILS' />
-          <Buttons icon={deleteIcon} type='danger' message='DELETE ITEM' />
+          <Buttons
+            icon={deleteIcon}
+            type='danger'
+            message='DELETE ITEM'
+            onClick={removeProduct}
+          />
         </div>
       </div>
     </motion.div>

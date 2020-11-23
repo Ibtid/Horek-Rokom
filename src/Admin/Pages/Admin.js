@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../Components/Header/Header';
 import AdminProductsList from '../Components/AdminProducts/AdminProductsList';
-import { DummyProducts } from '../../components/Products/DummyProducts';
 import { v4 as uuidv4 } from 'uuid';
 import './Admin.css';
 import NewProduct from '../Components/NewProducts/NewProduct';
@@ -41,21 +40,12 @@ const Admin = () => {
     setPrice(0);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newProduct = { id: uuidv4(), name: name, price: price, image: image };
-    DummyProducts.push(newProduct);
-    setImage('');
-    setName('');
-    setPrice(0);
-  };
-
   return (
     <div className='admin'>
       <Header />
       <div className='admin__body'>
         <div className='admin__showcase'>
-          <AdminProductsList DummyProducts={DummyProducts} />
+          <AdminProductsList DummyProducts={state.products} />
         </div>
         <div className='admin__form'>
           <NewProduct
