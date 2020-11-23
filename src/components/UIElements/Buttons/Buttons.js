@@ -1,14 +1,18 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Button.css';
 
 const Buttons = (props) => {
   return (
-    <div className='button' onClick={props.onClick}>
+    <motion.div
+      whileTap={{ scale: 0.9 }}
+      className='button'
+      onClick={props.onClick}>
       <div className={props.type}>
         {props.icon}
         {props.message}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

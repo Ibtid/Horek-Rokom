@@ -6,7 +6,6 @@ import ListAltIcon from '@material-ui/icons/ListAlt';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import './Navbar.css';
 import { useStateValue } from '../../../StateProvider/StateProvider';
-import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [state] = useStateValue();
@@ -28,7 +27,6 @@ const Navbar = () => {
           <ListAltIcon />
           <p> Order List</p>
         </Link>
-        <motion.div></motion.div>
         <Link to='/cart' className='navbar__element'>
           <ShoppingCartIcon />
           {totalItems}

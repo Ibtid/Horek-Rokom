@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AddIcon from '@material-ui/icons/Add';
 import './NewProducts.css';
 import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 
 const NewProduct = () => {
@@ -83,9 +84,12 @@ const NewProduct = () => {
           />
         </div>
         <div className='newProduct__formButtonSection'>
-          <button type='submit' className='newProduct__addButton'>
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            type='submit'
+            className='newProduct__addButton'>
             <AddIcon />
-          </button>
+          </motion.button>
         </div>
       </form>
     </div>
