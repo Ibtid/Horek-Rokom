@@ -4,10 +4,25 @@ import Buttons from '../UIElements/Buttons/Buttons';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import './Product.css';
+import { useStateValue } from '../../StateProvider/StateProvider';
 
 const Product = (props) => {
-  const icon = <AddShoppingCartIcon />;
-  const icon2 = <VisibilityIcon />;
+  const [state, dispatch] = useStateValue();
+  const addProductIcon = <AddShoppingCartIcon />;
+  const viewDetailsIcon = <VisibilityIcon />;
+
+  const addProductToCart = () => {
+    dispatch({
+      type: 'ADD_PRODUCT_TO_CART',
+      product: {
+        id: props.id,
+        image: props.image,
+        name: props.name,
+        price: props.price,
+      },
+    });
+  };
+
   return (
     <div className='product'>
       <div className='product__card'>
@@ -20,11 +35,16 @@ const Product = (props) => {
             <div className='product__price'>Price: ${props.price}</div>
           </div>
           <div className='product__button'>
-            <Buttons icon={icon} type='default' message='' />
+            <Buttons
+              icon={addProductIcon}
+              type='default'
+              message=''
+              onClick={addProductToCart}
+            />
             <Link
               to='/productDetails'
               className='product__productDetailsButton'>
-              <Buttons icon={icon2} type='default' message='' />
+              <Buttons icon={viewDetailsIcon} type='default' message='' />
             </Link>
           </div>
         </div>

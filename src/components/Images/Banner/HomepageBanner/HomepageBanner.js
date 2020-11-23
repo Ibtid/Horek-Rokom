@@ -1,9 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './HomepageBanner.css';
-import banner1 from '../../../../Resources/Picture/HomeBanner/banner1.jpg';
+import banner1 from '../../../../Resources/Picture/HomeBanner/banner3.jpg';
 import banner2 from '../../../../Resources/Picture/HomeBanner/banner2.jpg';
-import banner3 from '../../../../Resources/Picture/HomeBanner/banner3.jpg';
+import banner3 from '../../../../Resources/Picture/HomeBanner/banner1.jpg';
 import banner4 from '../../../../Resources/Picture/HomeBanner/banner4.jpg';
 import banner5 from '../../../../Resources/Picture/HomeBanner/banner5.jpg';
 import 'slick-carousel/slick/slick.css';

@@ -6,6 +6,8 @@ import AppleWatch from '../Resources/Picture/Products/AppleWatch.jpg';
 import DifferenteShoe from '../Resources/Picture/Products/DifferenteShoe.jpg';
 import NikeShoe from '../Resources/Picture/Products/NikeShoe.jpg';
 import Parse from '../Resources/Picture/Products/Parse.jpg';
+import Laptop from '../Resources/Picture/Products/Laptop.jpg';
+
 export const initialState = {
   products: [
     {
@@ -56,7 +58,14 @@ export const initialState = {
       image: Parse,
       price: 30,
     },
+    {
+      id: 9,
+      name: 'Laptop',
+      image: Laptop,
+      price: 500,
+    },
   ],
+  cart: [],
 };
 
 const reducer = (state, action) => {
@@ -79,6 +88,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         products: newProducts,
+      };
+    case 'ADD_PRODUCT_TO_CART':
+      return {
+        ...state,
+        cart: [...state.cart, action.product],
       };
     default:
       return state;

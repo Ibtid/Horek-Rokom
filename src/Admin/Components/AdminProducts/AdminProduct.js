@@ -8,6 +8,7 @@ import { useStateValue } from '../../../StateProvider/StateProvider';
 
 const AdminProduct = (props) => {
   const [state, dispatch] = useStateValue();
+
   const deleteIcon = <DeleteIcon />;
   const viewIcon = <VisibilityIcon />;
 
@@ -19,7 +20,10 @@ const AdminProduct = (props) => {
   };
 
   return (
-    <motion.div animate={{ scale: 0.9 }} transition className='adminProduct'>
+    <motion.div
+      animate={{ scale: 0.93, opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className='adminProduct'>
       <div className='adminProduct__card'>
         <div className='adminProduct__imageContainer'>
           <img
