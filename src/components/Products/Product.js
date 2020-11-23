@@ -17,14 +17,14 @@ const Product = (props) => {
         <div className='product__footer'>
           <div className='product__info'>
             <div className='product__name'>{props.name}</div>
-            <div className='product__price'>${props.price}</div>
+            <div className='product__price'>Price: ${props.price}</div>
           </div>
           <div className='product__button'>
-            <Buttons icon={icon} type='default' message='ADD TO CART' />
+            <Buttons icon={icon} type='default' message='' />
             <Link
               to='/productDetails'
               className='product__productDetailsButton'>
-              <Buttons icon={icon2} type='default' message='VIEW PRODUCT' />
+              <Buttons icon={icon2} type='default' message='' />
             </Link>
           </div>
         </div>
