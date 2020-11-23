@@ -12,6 +12,7 @@ const AdminProductsList = ({ DummyProducts }) => {
           .map((product) => (
             <AdminProduct
               key={product.id}
+              id={product.id}
               name={product.name}
               image={product.image}
               price={product.price}
