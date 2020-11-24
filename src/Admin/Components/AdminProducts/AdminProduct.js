@@ -32,8 +32,8 @@ const AdminProduct = (props) => {
       {showProduct && (
         <motion.div
           animate={{ scale: 0.93, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          exit={{ scale: 0, opacity: 0 }}
+          exit={{ scale: -25, opacity: 0 }}
+          transition={{ duration: 0.5 }}
           className='adminProduct'>
           <div className='adminProduct__card'>
             <div className='adminProduct__imageContainer'>
