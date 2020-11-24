@@ -5,6 +5,7 @@ import Admin from './Admin/Pages/Admin';
 import './App.css';
 import Navbar from './components/UIElements/Navbar/Navbar';
 import Home from './Pages/Homepage/Home';
+import ProductDetails from './Pages/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         </Route>
         <Route path='/:pid'>
           <Navbar />
-          <h1>DETAILS</h1>
+          <ProductDetails />
         </Route>
         <Route path='/signin'>
           <h1>SignIN</h1>
