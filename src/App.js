@@ -17,7 +17,7 @@ function App() {
           <Navbar />
           <h1>ORDERS</h1>
         </Route>
-        <Route path='/productDetails'>
+        <Route path='/:pid'>
           <Navbar />
           <h1>DETAILS</h1>
         </Route>

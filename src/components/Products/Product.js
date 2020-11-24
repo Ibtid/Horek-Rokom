@@ -41,9 +41,7 @@ const Product = (props) => {
               message=''
               onClick={addProductToCart}
             />
-            <Link
-              to='/productDetails'
-              className='product__productDetailsButton'>
+            <Link to={`/${props.id}`} className='product__productDetailsButton'>
               <Buttons icon={viewDetailsIcon} type='default' message='' />
             </Link>
           </div>
