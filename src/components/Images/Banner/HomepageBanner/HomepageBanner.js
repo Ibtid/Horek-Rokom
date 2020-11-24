@@ -15,7 +15,7 @@ const HomepageBanner = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };

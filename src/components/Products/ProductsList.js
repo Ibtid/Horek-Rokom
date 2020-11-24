@@ -21,6 +21,7 @@ const ProductsList = () => {
               image={product.image}
               name={product.name}
               price={product.price}
+              rating={product.rating}
             />
           ))}
         </motion.div>

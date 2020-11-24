@@ -85,7 +85,7 @@ const NewProduct = () => {
         </div>
         <div className='newProduct__formButtonSection'>
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.95 }}
             type='submit'
             className='newProduct__addButton'>
             <AddIcon />
