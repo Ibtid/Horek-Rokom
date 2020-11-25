@@ -1,5 +1,5 @@
 import React from 'react';
-import CartProducts from './CartProducts';
+import CartProducts from '../../Admin/Components/AdminProducts/AdminProduct';
 import './CartProductsList.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
 
