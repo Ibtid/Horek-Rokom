@@ -1,0 +1,13 @@
+.shoppingCart {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.shoppingCart__container {
+  display: flex;
+}
+
+.shoppingCart__banner {
+  height: 13vh;
+  width: 50rem;
+}

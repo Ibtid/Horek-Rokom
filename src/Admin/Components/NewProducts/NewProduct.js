@@ -34,7 +34,7 @@ const NewProduct = () => {
         image: image,
       },
     });
-    setImage('');
+    //setImage('');
     setName('');
     setPrice(0);
   };
