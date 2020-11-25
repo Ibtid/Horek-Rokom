@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Buttons from '../UIElements/Buttons/Buttons';
+import Buttons from '../../SharedComponents/UIElements/Buttons/Buttons';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import './Product.css';

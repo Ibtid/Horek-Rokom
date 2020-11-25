@@ -1,5 +1,5 @@
 import React from 'react';
-import CartProducts from '../../Admin/Components/AdminProducts/AdminProduct';
+import AdminProducts from '../../Admin/Components/AdminProducts/AdminProduct';
 import './CartProductsList.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
 
@@ -9,7 +9,7 @@ const CartProductsList = () => {
   return (
     <div className='cartProducts'>
       {state.cart.map((product) => (
-        <CartProducts
+        <AdminProducts
           name={product.name}
           image={product.image}
           price={product.price}

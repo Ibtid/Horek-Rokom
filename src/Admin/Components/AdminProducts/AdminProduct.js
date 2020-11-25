@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Buttons from '../../../components/UIElements/Buttons/Buttons';
+import Buttons from '../../../SharedComponents/UIElements/Buttons/Buttons';
 import DeleteIcon from '@material-ui/icons/Delete';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { motion, AnimatePresence } from 'framer-motion';

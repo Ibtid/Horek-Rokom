@@ -1,5 +1,5 @@
 import React from 'react';
-import CartProductsList from '../../components/CartProducts/CartProductsList';
+import CartProductsList from '../../UserComponent/CartProducts/CartProductsList';
 import Banner from '../../Resources/Picture/HomeBanner/CartBanner.png';
 import './ShoppingCart.css';
 

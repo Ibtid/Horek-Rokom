@@ -1,6 +1,6 @@
 import React from 'react';
 import './CartProducts.css';
-import Button from '../UIElements/Buttons/Buttons';
+import Button from '../../SharedComponents/UIElements/Buttons/Buttons';
 
 const CartProducts = (props) => {
   return (
