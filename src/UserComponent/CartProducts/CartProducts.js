@@ -1,27 +1,21 @@
 import React from 'react';
 import './CartProducts.css';
-import Button from '../../SharedComponents/UIElements/Buttons/Buttons';
+import DeleteIcon from '@material-ui/icons/Delete';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import ProductCardForList from '../../SharedComponents/Product/ProductCardForList';
 
 const CartProducts = (props) => {
+  const viewIcon = <VisibilityIcon />;
+  const deleteIcon = <DeleteIcon />;
+
   return (
-    <div className='cartProducts'>
-      <div className='cartProducts__card'>
-        <div className='cartProducts__imageContainer'>
-          <img
-            className='cartProducts__image'
-            src={props.image}
-            alt='product'
-          />
-        </div>
-        <div className='cartProducts__info'>
-          <div className='cartProducts__title'>{props.name}</div>
-          <div className='cartProducts__price'>Price ${props.price}</div>
-          <div className='cartProducts__buttons'>
-            <Button type='danger' message='Remove' />
-          </div>
-        </div>
-      </div>
-    </div>
+    <ProductCardForList
+      name={props.name}
+      image={props.image}
+      price={props.price}
+      viewIcon={viewIcon}
+      deleteIcon={deleteIcon}
+    />
   );
 };
 
