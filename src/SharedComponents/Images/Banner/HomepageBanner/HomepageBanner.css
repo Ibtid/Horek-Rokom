@@ -1,6 +1,6 @@
 .homepageBanner {
   z-index: -1;
-  margin-bottom: -62vh;
+  margin-bottom: -62.5vh;
 }
 .homepageBanner__image {
   height: 100vh;
@@ -9,7 +9,7 @@
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.9),
     rgba(0, 0, 0, 0)
   );
   margin-bottom: 0vh;

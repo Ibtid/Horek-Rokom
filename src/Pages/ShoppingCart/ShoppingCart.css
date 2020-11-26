@@ -7,7 +7,30 @@
   display: flex;
 }
 
+.shoppingCart__List {
+  display: flex;
+  flex-direction: column;
+}
+
+.shoppingCart__bannerContainer {
+  position: sticky;
+  top: 10vh;
+  height: 13vh;
+  z-index: 10;
+}
+
 .shoppingCart__banner {
   height: 13vh;
   width: 50rem;
+  position: sticky;
+  top: 10vh;
+  z-index: 10;
+}
+
+.shoppingCart__ListTitle {
+  position: sticky;
+  top: 23vh;
+  z-index: 10;
+  background-color: #e9e6e6;
+  border-bottom: 2px solid;
 }

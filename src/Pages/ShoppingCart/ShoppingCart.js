@@ -12,7 +12,7 @@ const ShoppingCart = () => {
             <img className='shoppingCart__banner' src={Banner} alt='banner' />
           </div>
           <div className='shoppingCart__ListTitle'>
-            <h1>Here is Your Cart</h1>
+            <h4>Here is Your Cart</h4>
           </div>
           <div className='shoppingCart__ListPresent'>
             <CartProductsList />
