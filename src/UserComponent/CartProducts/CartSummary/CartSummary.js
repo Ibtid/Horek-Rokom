@@ -7,8 +7,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const CartSummary = () => {
   const [state, dispatch] = useStateValue();
+  console.log(state.cart);
   const subtotal = state.cart.reduce((accumulator, product) => {
-    return (accumulator = accumulator + product.price);
+    return (accumulator = accumulator + parseInt(product.price));
   }, 0);
   const shipping = state.cart.length * 2;
   const tax = 0.1 * subtotal;
