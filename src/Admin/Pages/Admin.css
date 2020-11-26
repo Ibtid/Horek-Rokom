@@ -7,3 +7,11 @@
 .admin__showcase {
   flex: 0.7;
 }
+
+.admin__form {
+  height: 90vh;
+  position: sticky;
+  top: 10vh;
+  display: flex;
+  align-items: center;
+}

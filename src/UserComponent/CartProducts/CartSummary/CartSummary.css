@@ -5,7 +5,6 @@
   font-family: 'Libre Baskerville', serif;
   position: sticky;
   top: 25vh;
-  height: 75vh;
 }
 
 .cartSummary__container {
@@ -13,22 +12,38 @@
 }
 
 .cartSummary__title {
-  padding: 1rem;
-  font-size: 2.5rem;
+  padding: 0.7rem 1rem;
+  font-size: 1.5rem;
   border-bottom: 1px solid;
   border-color: #f1f5f5;
+  display: flex;
+  align-items: center;
+}
+
+.cartSummary__titleText {
+  padding-left: 0.3rem;
 }
 
 .cartSummary__promoCodeAd {
-  padding: 1rem;
+  padding: 0.7rem 1rem;
   font-size: 0.7rem;
   text-decoration: underline;
   border-bottom: 1px solid;
   border-color: #f1f5f5;
 }
 
+.cartSummary__items {
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: #f1f5f5;
+}
+
 .cartSummary__subtotal {
-  padding: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
@@ -36,7 +51,8 @@
 }
 
 .cartSummary__shipping {
-  padding: 1rem;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
@@ -44,7 +60,8 @@
 }
 
 .cartSummary__tax {
-  padding: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
@@ -52,7 +69,8 @@
 }
 
 .cartSummary__total {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
