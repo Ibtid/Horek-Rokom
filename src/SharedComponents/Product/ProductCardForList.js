@@ -9,7 +9,7 @@ const ProductCardForList = (props) => {
     setShowProduct(false);
     setTimeout(() => {
       props.removeProduct();
-    }, 2000);
+    }, 500);
   };
   return (
     <AnimatePresence>

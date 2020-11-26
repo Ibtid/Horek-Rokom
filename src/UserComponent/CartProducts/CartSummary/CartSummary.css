@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+.cartSummary {
+  background-color: #121212;
+  color: #f1f5f5;
+  font-family: 'Libre Baskerville', serif;
+  position: sticky;
+  top: 25vh;
+  height: 75vh;
+}
+
+.cartSummary__container {
+  padding: 1rem;
+}
+
+.cartSummary__title {
+  padding: 1rem;
+  font-size: 2.5rem;
+  border-bottom: 1px solid;
+  border-color: #f1f5f5;
+}
+
+.cartSummary__promoCodeAd {
+  padding: 1rem;
+  font-size: 0.7rem;
+  text-decoration: underline;
+  border-bottom: 1px solid;
+  border-color: #f1f5f5;
+}
+
+.cartSummary__subtotal {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: #f1f5f5;
+}
+
+.cartSummary__shipping {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: #f1f5f5;
+}
+
+.cartSummary__tax {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: #f1f5f5;
+}
+
+.cartSummary__total {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: #f1f5f5;
+}
+
+.cartSummary__button {
+  padding: 1.5rem;
+}

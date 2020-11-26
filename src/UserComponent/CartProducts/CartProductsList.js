@@ -10,6 +10,8 @@ const CartProductsList = () => {
     <div className='cartProducts'>
       {state.cart.map((product) => (
         <CartProducts
+          key={product.id}
+          id={product.id}
           name={product.name}
           image={product.image}
           price={product.price}

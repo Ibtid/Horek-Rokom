@@ -94,6 +94,18 @@ const reducer = (state, action) => {
         ...state,
         cart: [...state.cart, action.product],
       };
+    case 'REMOVE_PRODUCT_FROM_CART':
+      const cartIndex = state.cart.findIndex((cart) => cart.id === action.id);
+      let cartProducts = [...state.cart];
+      if (cartIndex >= 0) {
+        cartProducts.splice(cartIndex, 1);
+      } else {
+        console.warn('no products');
+      }
+      return {
+        ...state,
+        cart: cartProducts,
+      };
     default:
       return state;
   }

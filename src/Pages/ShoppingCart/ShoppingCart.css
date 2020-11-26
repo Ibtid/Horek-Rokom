@@ -1,13 +1,22 @@
 .shoppingCart {
-  width: 90%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  background-color: #f1f5f5;
 }
 .shoppingCart__container {
   display: flex;
+  flex-direction: column;
 }
-
+.shoppingCart__main {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 25vh;
+  min-height: 75vh;
+}
 .shoppingCart__List {
+  flex: 0.6;
   display: flex;
   flex-direction: column;
 }
@@ -15,22 +24,23 @@
 .shoppingCart__bannerContainer {
   position: sticky;
   top: 10vh;
-  height: 13vh;
+  width: 70rem;
+  height: 15vh;
   z-index: 10;
 }
 
 .shoppingCart__banner {
-  height: 13vh;
-  width: 50rem;
+  height: 15vh;
+  width: 70rem;
   position: sticky;
   top: 10vh;
   z-index: 10;
 }
 
-.shoppingCart__ListTitle {
+.shoppingCart__summary {
+  flex: 0.4;
+  height: 75vh;
   position: sticky;
-  top: 23vh;
+  top: 25vh;
   z-index: 10;
-  background-color: #e9e6e6;
-  border-bottom: 2px solid;
 }
