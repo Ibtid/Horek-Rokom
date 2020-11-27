@@ -17,7 +17,7 @@ const ProductCardForList = (props) => {
         <motion.div
           animate={{ scale: 0.93, opacity: 1 }}
           exit={{ scale: -25, opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className='ProductCard'>
           <div className='ProductCard__card'>
             <div className='ProductCard__imageContainer'>
