@@ -5,8 +5,10 @@
   background-color: #121212;
   color: #f1f5f5;
   font-family: 'PT Sans', sans-serif;
-  position: sticky;
-  top: 25vh;
+  position: absolute;
+  width: 100%;
+  top: -30rem;
+  opacity: 0;
 }
 
 .cartSummary__container {

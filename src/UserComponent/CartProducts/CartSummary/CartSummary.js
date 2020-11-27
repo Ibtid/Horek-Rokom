@@ -4,6 +4,7 @@ import Button from '../../../SharedComponents/UIElements/Buttons/Buttons';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 import ForwardIcon from '@material-ui/icons/Forward';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { motion } from 'framer-motion';
 
 const CartSummary = () => {
   const [state, dispatch] = useStateValue();
@@ -16,7 +17,10 @@ const CartSummary = () => {
   const total = tax + subtotal + shipping;
   const forward = <ForwardIcon />;
   return (
-    <div className='cartSummary'>
+    <motion.div
+      animate={{ y: 480, opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className='cartSummary'>
       <div className='cartSummary__container'>
         <div className='cartSummary__title'>
           <ShoppingCartIcon />
@@ -49,7 +53,7 @@ const CartSummary = () => {
           <Button type='danger' icon={forward} message='Proceed Checkout' />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
