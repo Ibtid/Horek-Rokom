@@ -1,6 +1,5 @@
 import React from 'react';
 import CartProducts from './CartProducts';
-import './CartProductsList.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
 
 const CartProductsList = () => {

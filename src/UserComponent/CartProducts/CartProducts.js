@@ -1,5 +1,4 @@
 import React from 'react';
-import './CartProducts.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import ProductCardForList from '../../SharedComponents/Product/ProductCardForList';

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 .product {
   opacity: 1;
@@ -52,17 +53,17 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .product__name {
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: bold;
 }
 
 .product__price {
   color: #f15a5a;
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 800;
 }
 

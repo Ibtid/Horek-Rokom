@@ -34,19 +34,19 @@ const CartSummary = () => {
           <div className='cartSummary__subtotalCost'>x{state.cart.length}</div>
         </div>
         <div className='cartSummary__subtotal'>
-          <div className='cartSummary__subtotalTitle'>SUBTOTAL:</div>
+          <div className='cartSummary__subtotalTitle'>Subtotal:</div>
           <div className='cartSummary__subtotalCost'>${subtotal}</div>
         </div>
         <div className='cartSummary__shipping'>
-          <div className='cartSummary__shippingTitle'>SHIPPING:</div>
+          <div className='cartSummary__shippingTitle'>Shipping:</div>
           <div className='cartSummary__shippingCost'>${shipping}</div>
         </div>
         <div className='cartSummary__tax'>
-          <div className='cartSummary__taxTitle'>TAX:</div>
+          <div className='cartSummary__taxTitle'>Tax:</div>
           <div className='cartSummary__taxCost'>${tax}</div>
         </div>
         <div className='cartSummary__total'>
-          <div className='cartSummary__totalTitle'>TOTAL</div>
+          <div className='cartSummary__totalTitle'>Total:</div>
           <div className='cartSummary__totalCost'>${total}</div>
         </div>
         <div className='cartSummary__button'>

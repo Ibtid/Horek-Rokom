@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 .newProduct {
   margin: 3rem;
@@ -22,7 +23,7 @@
   border-bottom: 2px solid;
   border-color: #121212;
   font-weight: bold;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .newProduct__form {
@@ -41,7 +42,7 @@
 
 .newProduct__inputLabel {
   font-size: 1.2em;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .newProduct__input {
