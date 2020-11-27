@@ -7,6 +7,7 @@ import Navbar from './SharedComponents/UIElements/Navbar/Navbar';
 import Home from './Pages/Homepage/Home';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import ShoppingCart from './Pages/ShoppingCart/ShoppingCart';
+import SignInForm from './Pages/SignIn/SignInForm';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <h1>ORDERS</h1>
         </Route>
         <Route path='/signin'>
-          <h1>SignIN</h1>
+          <SignInForm />
         </Route>
         <Route path='/cart'>
           <Navbar />

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+.base-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.header {
+  padding: 8px;
+  font-size: 18px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.image {
+  width: 21em;
+}
+.form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+.error {
+  margin: 0.2rem;
+  color: red;
+  font-size: 1rem;
+}
+
+label {
+  font-size: 16px;
+  color: #f1f5f5;
+}
+
+input {
+  margin-top: 0rem;
+  min-width: 18em;
+  height: 25px;
+  padding: 0px 10px;
+  font-size: 14px;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #f3f3f3;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transition: all 250ms ease-in-out;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0.8px #0e81ce96;
+}
+
+.inputError {
+  box-shadow: 0px 0px 8px 0.8px #ff0f0f;
+}
+
+.btn {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 0;
+  background-color: #f15a5a;
+  color: #f1f5f5;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f1f5f5;
+  color: #f15a5a;
+}
+.btn:focus {
+  outline: none;
+}
+
+.footer {
+  position: sticky;
+  top: 80vh;
+  margin: 1em;
+}

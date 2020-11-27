@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 .cartSummary {
   background-color: #121212;
   color: #f1f5f5;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'PT Sans', sans-serif;
   position: sticky;
   top: 25vh;
 }
 
 .cartSummary__container {
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .cartSummary__title {
@@ -78,5 +80,5 @@
 }
 
 .cartSummary__button {
-  padding: 1.5rem;
+  padding: 1rem;
 }

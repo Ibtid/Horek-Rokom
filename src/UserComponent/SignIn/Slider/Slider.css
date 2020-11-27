@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70%;
+  background-color: #f15a5a;
+  width: 100%;
+  position: absolute;
+  right: -34%;
+  border-radius: 6px;
+  z-index: 1;
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
+}
+
+.right {
+  right: -50%;
+  align-items: flex-end;
+}
+.right:hover {
+  right: -55%;
+}
+
+.left {
+  right: 50%;
+  align-items: flex-start;
+}
+.left:hover {
+  right: 55%;
+}
+
+.text {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: #fff;
+  margin-right: 3em;
+  margin-left: 3em;
+}
+
+.message {
+  font-size: 16px;
+}
