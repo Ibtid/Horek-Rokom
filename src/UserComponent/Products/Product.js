@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Buttons from '../../SharedComponents/UIElements/Buttons/Buttons';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import './Product.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
+import Modal from '../../SharedComponents/UIElements/Modal/ProductModal/Modal';
 
 const Product = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [state, dispatch] = useStateValue();
   const addProductIcon = <AddShoppingCartIcon />;
   const viewDetailsIcon = <VisibilityIcon />;
@@ -25,6 +27,15 @@ const Product = (props) => {
 
   return (
     <div className='product'>
+      {isOpen && (
+        <Modal
+          setIsOpen={() => setIsOpen(false)}
+          id={props.id}
+          image={props.image}
+          name={props.name}
+          price={props.price}
+        />
+      )}
       <div className='product__card'>
         <div className='product__imageContainer'>
           <img className='product__image' src={props.image} alt='product.png' />
@@ -42,7 +53,12 @@ const Product = (props) => {
               onClick={addProductToCart}
             />
             <Link to={`/${props.id}`} className='product__productDetailsButton'>
-              <Buttons icon={viewDetailsIcon} type='default' message='' />
+              <Buttons
+                icon={viewDetailsIcon}
+                type='default'
+                message=''
+                onClick={() => setIsOpen(true)}
+              />
             </Link>
           </div>
         </div>
