@@ -10,6 +10,7 @@ const NewProduct = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState('');
+  const [description, setDescription] = useState('');
 
   const handleName = (event) => {
     setName(event.target.value);
@@ -21,6 +22,10 @@ const NewProduct = () => {
 
   const handleImage = (event) => {
     setImage(URL.createObjectURL(event.target.files[0]));
+  };
+
+  const handleDescription = (event) => {
+    setDescription(event.target.value);
   };
 
   const addProduct = (event) => {
@@ -81,6 +86,20 @@ const NewProduct = () => {
             name='image'
             placeholder='Choose the image'
             onChange={handleImage}
+          />
+        </div>
+        <div className='newProduct__inputSection'>
+          <label className='newProduct__inputLabel' htmlFor='name'>
+            Description
+          </label>
+          <input
+            type='text'
+            className='newProduct__input'
+            id='description'
+            name='description'
+            placeholder='Enter details'
+            value={description}
+            onChange={handleDescription}
           />
         </div>
         <div className='newProduct__formButtonSection'>
