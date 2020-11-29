@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Buttons from '../../SharedComponents/UIElements/Buttons/Buttons';
 import './ProductCardForList.css';
+import Modal from '../UIElements/Modal/ProductModal/Modal';
 
 const ProductCardForList = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [showProduct, setShowProduct] = useState(true);
   const eraseProduct = () => {
     setShowProduct(false);
@@ -13,6 +15,15 @@ const ProductCardForList = (props) => {
   };
   return (
     <AnimatePresence>
+      {isOpen && (
+        <Modal
+          setIsOpen={() => setIsOpen(false)}
+          id={props.id}
+          image={props.image}
+          name={props.name}
+          price={props.price}
+        />
+      )}
       {showProduct && (
         <motion.div
           animate={{ scale: 0.93, opacity: 1 }}
@@ -42,6 +53,7 @@ const ProductCardForList = (props) => {
                 icon={props.viewIcon}
                 type='default'
                 message='VIEW DETAILS'
+                onClick={() => setIsOpen(true)}
               />
               <Buttons
                 icon={props.deleteIcon}

@@ -52,14 +52,13 @@ const Product = (props) => {
               message=''
               onClick={addProductToCart}
             />
-            <Link to={`/${props.id}`} className='product__productDetailsButton'>
-              <Buttons
-                icon={viewDetailsIcon}
-                type='default'
-                message=''
-                onClick={() => setIsOpen(true)}
-              />
-            </Link>
+
+            <Buttons
+              icon={viewDetailsIcon}
+              type='default'
+              message=''
+              onClick={() => setIsOpen(true)}
+            />
           </div>
         </div>
       </div>
