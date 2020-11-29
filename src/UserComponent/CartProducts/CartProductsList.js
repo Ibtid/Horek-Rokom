@@ -14,6 +14,7 @@ const CartProductsList = () => {
           name={product.name}
           image={product.image}
           price={product.price}
+          description={product.description}
         />
       ))}
     </div>

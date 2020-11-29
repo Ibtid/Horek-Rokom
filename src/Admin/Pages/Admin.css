@@ -1,6 +1,6 @@
 .admin__body {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: #f1f5f5;
 }
 

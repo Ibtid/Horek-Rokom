@@ -9,11 +9,11 @@ const Admin = () => {
     <div className='admin'>
       <Header />
       <div className='admin__body'>
-        <div className='admin__showcase'>
-          <AdminProductsList />
-        </div>
         <div className='admin__form'>
           <NewProduct />
+        </div>
+        <div className='admin__showcase'>
+          <AdminProductsList />
         </div>
       </div>
     </div>

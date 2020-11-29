@@ -15,6 +15,7 @@ const CartProducts = (props) => {
       type: 'REMOVE_PRODUCT_FROM_CART',
       id: props.id,
     });
+    console.log(props.description);
   };
 
   return (
@@ -23,6 +24,7 @@ const CartProducts = (props) => {
       name={props.name}
       image={props.image}
       price={props.price}
+      description={props.description}
       viewIcon={viewIcon}
       deleteIcon={deleteIcon}
       removeProduct={removeProductfromCart}

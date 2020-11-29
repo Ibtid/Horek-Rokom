@@ -21,6 +21,7 @@ const Product = (props) => {
         image: props.image,
         name: props.name,
         price: props.price,
+        description: props.description,
       },
     });
   };
@@ -34,6 +35,7 @@ const Product = (props) => {
           image={props.image}
           name={props.name}
           price={props.price}
+          description={props.description}
         />
       )}
       <div className='product__card'>

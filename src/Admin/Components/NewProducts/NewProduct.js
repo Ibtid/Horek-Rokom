@@ -37,11 +37,15 @@ const NewProduct = () => {
         name: name,
         price: price,
         image: image,
+        description: description,
       },
     });
     //setImage('');
     setName('');
     setPrice(0);
+    setDescription('');
+    console.log('this is products');
+    console.log(state.products);
   };
   return (
     <div className='newProduct'>

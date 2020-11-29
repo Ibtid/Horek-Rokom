@@ -14,8 +14,7 @@
 .modal__container {
   display: flex;
   background-color: #f1f5f5;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 80%;
   height: 80vh;
   margin-top: -60vh;
@@ -34,9 +33,10 @@
 
 .modal__info {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 2rem;
 }
 
@@ -49,19 +49,16 @@
 .modal__price {
   font-size: 1.1rem;
   font-weight: 600;
-  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .modal__description {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  flex: 1;
 }
 .modal__descriptionTitle {
   font-weight: 800;
   font-size: 1.3rem;
-}
-
-.modal__buttons {
-  padding-bottom: 1.5rem;
 }

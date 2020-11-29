@@ -5,7 +5,6 @@ import Admin from './Admin/Pages/Admin';
 import './App.css';
 import Navbar from './SharedComponents/UIElements/Navbar/Navbar';
 import Home from './Pages/Homepage/Home';
-import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import ShoppingCart from './Pages/ShoppingCart/ShoppingCart';
 import SignInForm from './Pages/SignIn/SignInForm';
 
@@ -30,10 +29,6 @@ function App() {
         <Route path='/'>
           <Navbar />
           <Home />
-        </Route>
-        <Route path='/:pid'>
-          <Navbar />
-          <ProductDetails />
         </Route>
       </Switch>
     </Router>
