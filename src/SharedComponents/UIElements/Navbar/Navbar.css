@@ -16,6 +16,7 @@
 
 .navbar__logo {
   flex: 1;
+  padding-left: 4rem;
 }
 
 .navbar__element {

@@ -62,3 +62,6 @@
   font-weight: 800;
   font-size: 1.3rem;
 }
+.modal__buttons {
+  padding-left: 1rem;
+}
