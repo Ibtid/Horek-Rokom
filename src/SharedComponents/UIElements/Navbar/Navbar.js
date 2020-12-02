@@ -8,11 +8,10 @@ import './Navbar.css';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 
 const Navbar = () => {
-  const [state] = useStateValue();
+  const [state, dispatch] = useStateValue();
 
   let totalItems = state.cart.length;
-  console.log(state.cart);
-
+  console.log(state.currentUser);
   return (
     <div className='navbar'>
       <div className='navbar__container'>
@@ -21,7 +20,7 @@ const Navbar = () => {
         </div>
         <Link to='/signin' className='navbar__element'>
           <AccountCircleIcon />
-          <p> Sign In</p>
+          {state.currentUser.length === 1 ? <p>Sign Out</p> : <p>Sign In</p>}
         </Link>
         <Link to='/orders' className='navbar__element'>
           <ListAltIcon />

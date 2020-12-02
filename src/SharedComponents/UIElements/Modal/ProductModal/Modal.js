@@ -11,10 +11,7 @@ const Modal = (props) => {
   return ReactDOM.createPortal(
     <AnimatePresence>
       <div className='modal'>
-        <motion.div
-          animate={{ y: 430 }}
-          className='modal__container'
-          onClick={() => {}}>
+        <motion.div animate={{ y: 430 }} className='modal__container'>
           <div className='modal__imageContainer'>
             <img className='modal__image' src={props.image} alt='product' />
           </div>

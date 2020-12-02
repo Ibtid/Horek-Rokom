@@ -1,13 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react';
+import { useStateValue } from '../../../../StateProvider/StateProvider';
+import { v4 as uuidv4 } from 'uuid';
+import { useHistory } from 'react-router-dom';
 
 const useForm = (callBack, validate) => {
+  let history = useHistory();
+  const [state, dispatch] = useStateValue();
   const [values, setValues] = useState({
-    username: "",
-    email: "",
-    password: "",
+    username: '',
+    email: '',
+    password: '',
   });
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,17 +25,25 @@ const useForm = (callBack, validate) => {
     event.preventDefault();
     //handling errors
     setErrors(validate(values));
-    setIsSubmitting(true);
     //callBack();
-  };
-
-  useEffect(() => {
-    //check to see if there are no errors
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callBack();
+    if (Object.keys(errors).length === 0) {
+      dispatch({
+        type: 'Register_User',
+        registeredUser: {
+          id: uuidv4(),
+          username: values.username,
+          email: values.email,
+          password: values.password,
+        },
+      });
     }
-    //call our callback
-  }, [errors]);
+    setValues({
+      username: '',
+      email: '',
+      password: '',
+    });
+    history.push('/');
+  };
 
   return {
     handleChange,

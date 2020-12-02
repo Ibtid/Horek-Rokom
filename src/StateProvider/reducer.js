@@ -84,6 +84,8 @@ export const initialState = {
     },
   ],
   cart: [],
+  registeredUser: [],
+  currentUser: [],
 };
 
 const reducer = (state, action) => {
@@ -124,6 +126,47 @@ const reducer = (state, action) => {
         ...state,
         cart: cartProducts,
       };
+    case 'Register_User':
+      state.registeredUser.map((user) => {
+        if (user.username === action.registeredUser.username) {
+          alert('Username already in use');
+          return { ...state };
+        }
+      });
+      state.registeredUser.map((user) => {
+        if (user.email === action.registeredUser.email) {
+          alert('Email already in use');
+          return { ...state };
+        }
+      });
+      return {
+        ...state,
+        registeredUser: [...state.registeredUser, action.registeredUser],
+        currentUser: [action.registeredUser],
+      };
+    case 'LOGIN':
+      if (state.registeredUser.length === 0) {
+        alert('no user');
+        return { ...state };
+      }
+      state.registeredUser.map((user) => {
+        if (
+          user.username === action.currentUser.username &&
+          user.password === action.currentUser.password
+        ) {
+          alert('logged in');
+          return {
+            ...state,
+            currentUser: [action.currentUser],
+          };
+        } else {
+          alert('Invalid password or username');
+          console.log(state);
+          return { ...state };
+        }
+      });
+      console.log(state);
+      return { ...state };
     default:
       return state;
   }
