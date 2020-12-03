@@ -27,7 +27,8 @@
   padding: 0rem 2rem;
   color: #f5f5f5;
   font-weight: 400;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .navbar__element:hover {
@@ -35,5 +36,13 @@
 }
 
 .navbar__element p {
-  padding-left: 0.5rem;
+  padding-left: 0.7rem;
+}
+
+.navbar__elementText {
+  padding-left: 0.3rem;
+}
+
+.greet__text {
+  font-size: 0.5rem;
 }

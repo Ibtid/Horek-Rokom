@@ -11,20 +11,44 @@ const Navbar = () => {
   const [state, dispatch] = useStateValue();
 
   let totalItems = state.cart.length;
-  console.log(state.currentUser);
+  const signOut = () => {
+    dispatch({
+      type: 'LOGOUT',
+    });
+    alert('LOGGED OUT');
+  };
+  console.log(state);
   return (
     <div className='navbar'>
       <div className='navbar__container'>
         <div to='/' className='navbar__logo'>
           <Logo />
         </div>
-        <Link to='/signin' className='navbar__element'>
-          <AccountCircleIcon />
-          {state.currentUser.length === 1 ? <p>Sign Out</p> : <p>Sign In</p>}
-        </Link>
+        {state.currentUser.length === 1 ? (
+          <div className='navbar__element' onClick={signOut}>
+            <AccountCircleIcon />
+            <div className='navbar__elementText'>
+              <div className='greet__text'>
+                Hello {state.currentUser[0].username}
+              </div>
+              <div>Sign Out</div>
+            </div>
+          </div>
+        ) : (
+          <Link to='/signin' className='navbar__element'>
+            <AccountCircleIcon />
+            <div className='navbar__elementText'>
+              <div className='greet__text'>Hello Guest</div>
+              <div>Sign In</div>
+            </div>
+          </Link>
+        )}
         <Link to='/orders' className='navbar__element'>
           <ListAltIcon />
-          <p> Order List</p>
+          <div className='navbar__elementText'>
+            <div className='greet__text'>Returns and</div>
+            <div>Order List</div>
+          </div>
         </Link>
         <Link to='/cart' className='navbar__element'>
           <ShoppingCartIcon />

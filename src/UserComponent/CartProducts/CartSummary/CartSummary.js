@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 
 const CartSummary = () => {
   const [state, dispatch] = useStateValue();
-  console.log(state.cart);
   const subtotal = state.cart.reduce((accumulator, product) => {
     return (accumulator = accumulator + parseInt(product.price));
   }, 0);

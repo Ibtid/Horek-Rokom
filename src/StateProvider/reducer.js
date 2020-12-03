@@ -95,6 +95,7 @@ const reducer = (state, action) => {
         ...state,
         products: [...state.products, action.product],
       };
+
     case 'REMOVE_PRODUCT':
       const index = state.products.findIndex(
         (product) => product.id === action.id
@@ -109,11 +110,13 @@ const reducer = (state, action) => {
         ...state,
         products: newProducts,
       };
+
     case 'ADD_PRODUCT_TO_CART':
       return {
         ...state,
         cart: [...state.cart, action.product],
       };
+
     case 'REMOVE_PRODUCT_FROM_CART':
       const cartIndex = state.cart.findIndex((cart) => cart.id === action.id);
       let cartProducts = [...state.cart];
@@ -126,47 +129,50 @@ const reducer = (state, action) => {
         ...state,
         cart: cartProducts,
       };
+
     case 'Register_User':
+      let userIsUnique = true;
       state.registeredUser.map((user) => {
         if (user.username === action.registeredUser.username) {
           alert('Username already in use');
-          return { ...state };
+          userIsUnique = false;
         }
       });
       state.registeredUser.map((user) => {
         if (user.email === action.registeredUser.email) {
           alert('Email already in use');
-          return { ...state };
+          userIsUnique = false;
         }
       });
-      return {
-        ...state,
-        registeredUser: [...state.registeredUser, action.registeredUser],
-        currentUser: [action.registeredUser],
-      };
-    case 'LOGIN':
-      if (state.registeredUser.length === 0) {
-        alert('no user');
+      if (userIsUnique) {
+        return {
+          ...state,
+          registeredUser: [...state.registeredUser, action.registeredUser],
+          currentUser: [action.registeredUser],
+        };
+      } else {
         return { ...state };
       }
+
+    case 'LOGIN':
       state.registeredUser.map((user) => {
         if (
           user.username === action.currentUser.username &&
           user.password === action.currentUser.password
         ) {
           alert('logged in');
-          return {
-            ...state,
-            currentUser: [action.currentUser],
-          };
-        } else {
-          alert('Invalid password or username');
-          console.log(state);
-          return { ...state };
+          state = { ...state, currentUser: [action.currentUser] };
         }
       });
-      console.log(state);
+      if (state.currentUser.length === 0) alert('invalid username or password');
       return { ...state };
+
+    case 'LOGOUT':
+      return {
+        ...state,
+        currentUser: [],
+      };
+
     default:
       return state;
   }
