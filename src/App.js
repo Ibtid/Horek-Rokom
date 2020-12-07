@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Admin from './Admin/Pages/Admin';
+import AdminControl from './Admin/Pages/AdminContol';
+import Admin from './Admin/Pages/Admin/Admin';
 import './App.css';
 import Navbar from './SharedComponents/UIElements/Navbar/Navbar';
 import Home from './Pages/Homepage/Home';
@@ -12,6 +13,9 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path='/admin/control'>
+          <AdminControl />
+        </Route>
         <Route path='/admin'>
           <Admin />
         </Route>

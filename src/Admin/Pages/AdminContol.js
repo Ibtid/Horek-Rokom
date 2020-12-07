@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Components/Header/Header';
 import AdminProductsList from '../Components/AdminProducts/AdminProductsList';
-import './Admin.css';
+import './AdminControl.css';
 import NewProduct from '../Components/NewProducts/NewProduct';
 
 const Admin = () => {

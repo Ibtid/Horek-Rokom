@@ -5,7 +5,7 @@ import './Button.css';
 const Buttons = (props) => {
   return (
     <motion.div
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.85 }}
       className='button'
       onClick={props.onClick}>
       <div className={props.type}>
