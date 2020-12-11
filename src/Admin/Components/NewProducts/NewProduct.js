@@ -4,6 +4,7 @@ import './NewProducts.css';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
 import { useStateValue } from '../../../StateProvider/StateProvider';
+import Service from '../../../services/services';
 
 const NewProduct = () => {
   const [state, dispatch] = useStateValue();
@@ -11,7 +12,6 @@ const NewProduct = () => {
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
-
   const handleName = (event) => {
     setName(event.target.value);
   };
@@ -30,15 +30,24 @@ const NewProduct = () => {
 
   const addProduct = (event) => {
     event.preventDefault();
-    dispatch({
-      type: 'ADD_PRODUCT',
-      product: {
-        id: uuidv4(),
-        name: name,
-        price: price,
-        image: image,
-        description: description,
-      },
+    var data = {
+      name: name,
+      price: price,
+      image: image,
+      description: description,
+    };
+
+    Service.addNewProduct(data).then((response) => {
+      dispatch({
+        type: 'ADD_PRODUCT',
+        product: {
+          id: response.data.id,
+          name: response.data.name,
+          price: response.data.price,
+          image: response.data.image,
+          description: response.data.description,
+        },
+      });
     });
     //setImage('');
     setName('');
@@ -46,6 +55,7 @@ const NewProduct = () => {
     setDescription('');
     console.log('this is products');
     console.log(state.products);
+    console.log(image);
   };
   return (
     <div className='newProduct'>
