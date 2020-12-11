@@ -1,15 +1,16 @@
 .homepageBanner {
   z-index: -1;
-  margin-bottom: -62.5vh;
+  margin-bottom: -54.5vh;
+  min-height: 90vh;
 }
 .homepageBanner__image {
-  height: 100vh;
+  min-height: 90vh;
   width: 100%;
   z-index: -1;
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.8),
     rgba(0, 0, 0, 0)
   );
   margin-bottom: 0vh;

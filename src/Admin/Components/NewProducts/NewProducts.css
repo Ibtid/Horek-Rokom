@@ -39,7 +39,7 @@
 }
 
 .newProduct__inputLabel {
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -48,12 +48,11 @@
   min-width: 18em;
   height: 25px;
   padding: 0px 10px;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-family: 'PT Sans', sans-serif;
   background-color: #f1f5f5;
-  border: 0px;
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
   transition: all 250ms ease-in-out;
 }
 
@@ -67,10 +66,11 @@
   align-items: center;
   font-size: 1rem;
   padding: 7px;
-  border: 0;
+  margin-bottom: 1rem;
   background-color: #121212;
   color: #f1f5f5;
   border-radius: 50%;
+  border-style: none;
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
@@ -81,4 +81,18 @@
 
 .newProduct__addButton:focus {
   outline: none;
+}
+
+.newProduct__imagePreviewContainer {
+  height: 15vh;
+  width: 6rem;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #f1f5f5;
+  transition: 0.3s ease-in-out;
+}
+
+.imagePreview {
+  height: 15vh;
+  width: 6rem;
+  border-radius: 10px 10px 10px 10px;
 }

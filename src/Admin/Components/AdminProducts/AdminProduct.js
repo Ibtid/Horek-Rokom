@@ -3,6 +3,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 import ProductCardForList from '../../../SharedComponents/Product/ProductCardForList';
+import Service from '../../../services/services';
 
 const AdminProduct = (props) => {
   const [state, dispatch] = useStateValue();
@@ -11,10 +12,17 @@ const AdminProduct = (props) => {
   const deleteIcon = <DeleteIcon />;
 
   const removeProduct = () => {
-    dispatch({
-      type: 'REMOVE_PRODUCT',
-      id: props.id,
-    });
+    Service.removeProduct(props.id)
+      .then((response) => {
+        dispatch({
+          type: 'REMOVE_PRODUCT',
+          id: props.id,
+        });
+        console.log(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (

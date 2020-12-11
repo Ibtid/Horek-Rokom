@@ -1,17 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import AddIcon from '@material-ui/icons/Add';
 import './NewProducts.css';
-import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 import Service from '../../../services/services';
+import Button from '../../../SharedComponents/UIElements/Buttons/Buttons';
 
 const NewProduct = () => {
   const [state, dispatch] = useStateValue();
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
+  const [file, setFile] = useState();
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
+
+  const filePickerRef = useRef();
+
+  const pickImageHandler = () => {
+    filePickerRef.current.click();
+  };
+
+  useEffect(() => {
+    if (!file) {
+      return;
+    }
+    const fileReader = new FileReader();
+    fileReader.onload = () => {
+      setImage(fileReader.result);
+    };
+    fileReader.readAsDataURL(file);
+  }, [file]);
+
   const handleName = (event) => {
     setName(event.target.value);
   };
@@ -21,7 +40,9 @@ const NewProduct = () => {
   };
 
   const handleImage = (event) => {
-    setImage(URL.createObjectURL(event.target.files[0]));
+    const pickedFile = event.target.files[0];
+    setFile(pickedFile);
+    //setImage(URL.createObjectURL(event.target.files[0]));
   };
 
   const handleDescription = (event) => {
@@ -49,7 +70,7 @@ const NewProduct = () => {
         },
       });
     });
-    //setImage('');
+    //setImage('a.jpg');
     setName('');
     setPrice(0);
     setDescription('');
@@ -90,17 +111,27 @@ const NewProduct = () => {
           />
         </div>
         <div className='newProduct__inputSection'>
-          <label className='newProduct__inputLabel' htmlFor='image'>
-            Image
-          </label>
           <input
+            style={{ display: 'none' }}
+            ref={filePickerRef}
             type='file'
             className='newProduct__input'
             id='image'
             name='image'
             placeholder='Choose the image'
+            accept='.jpg,.png,.jpeg'
             onChange={handleImage}
           />
+          <div className='newProduct__imagePreview'>
+            <div className='newProduct__imagePreviewContainer'>
+              <img className='imagePreview' src={image} alt='Preview' />
+            </div>
+            <Button
+              type='default'
+              message='PICK IMAGE'
+              onClick={pickImageHandler}
+            />
+          </div>
         </div>
         <div className='newProduct__inputSection'>
           <label className='newProduct__inputLabel' htmlFor='name'>

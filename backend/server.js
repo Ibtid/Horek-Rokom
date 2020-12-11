@@ -5,10 +5,10 @@ const cors = require('cors');
 const app = express();
 
 // parse requests of content-type: application/json
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
 
 //parse requests of content-type: application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 app.use(cors());
 
