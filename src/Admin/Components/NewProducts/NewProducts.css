@@ -85,7 +85,7 @@
 
 .newProduct__imagePreviewContainer {
   height: 15vh;
-  width: 6rem;
+  width: 7rem;
   border-radius: 10px 10px 10px 10px;
   background-color: #f1f5f5;
   transition: 0.3s ease-in-out;
@@ -93,6 +93,6 @@
 
 .imagePreview {
   height: 15vh;
-  width: 6rem;
+  width: 7rem;
   border-radius: 10px 10px 10px 10px;
 }

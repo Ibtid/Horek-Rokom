@@ -5,13 +5,14 @@ import { motion } from 'framer-motion';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 import Service from '../../../services/services';
 import Button from '../../../SharedComponents/UIElements/Buttons/Buttons';
+import Preview from '../../../Resources/Picture/Products/preview.png';
 
 const NewProduct = () => {
   const [state, dispatch] = useStateValue();
   const [name, setName] = useState('');
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState();
   const [file, setFile] = useState();
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState(Preview);
   const [description, setDescription] = useState('');
 
   const filePickerRef = useRef();
@@ -70,9 +71,9 @@ const NewProduct = () => {
         },
       });
     });
-    //setImage('a.jpg');
+    setImage(Preview);
     setName('');
-    setPrice(0);
+    setPrice();
     setDescription('');
     console.log('this is products');
     console.log(state.products);
@@ -105,7 +106,7 @@ const NewProduct = () => {
             className='newProduct__input'
             id='price'
             name='price'
-            placeholder='Set the price'
+            placeholder='Enter the Product Price'
             value={price}
             onChange={handlePrice}
           />
