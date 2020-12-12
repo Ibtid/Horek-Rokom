@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
 .productList__showcase {
-  opacity: 0.5;
+  opacity: 1;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 1rem;
 }

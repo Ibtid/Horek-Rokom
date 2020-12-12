@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Buttons from '../../SharedComponents/UIElements/Buttons/Buttons';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import VisibilityIcon from '@material-ui/icons/Visibility';
@@ -27,7 +27,10 @@ const Product = (props) => {
   };
 
   return (
-    <div className='product'>
+    <motion.div
+      animate={{ scale: 0.93, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className='product'>
       {isOpen && (
         <Modal
           setIsOpen={() => setIsOpen(false)}
@@ -64,7 +67,7 @@ const Product = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
