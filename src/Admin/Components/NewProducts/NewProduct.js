@@ -98,20 +98,6 @@ const NewProduct = () => {
           />
         </div>
         <div className='newProduct__inputSection'>
-          <label className='newProduct__inputLabel' htmlFor='price'>
-            Price
-          </label>
-          <input
-            type='number'
-            className='newProduct__input'
-            id='price'
-            name='price'
-            placeholder='Enter the Product Price'
-            value={price}
-            onChange={handlePrice}
-          />
-        </div>
-        <div className='newProduct__inputSection'>
           <input
             style={{ display: 'none' }}
             ref={filePickerRef}
@@ -135,6 +121,20 @@ const NewProduct = () => {
           </div>
         </div>
         <div className='newProduct__inputSection'>
+          <label className='newProduct__inputLabel' htmlFor='price'>
+            Price
+          </label>
+          <input
+            type='number'
+            className='newProduct__input'
+            id='price'
+            name='price'
+            placeholder='Enter Product Price'
+            value={price}
+            onChange={handlePrice}
+          />
+        </div>
+        <div className='newProduct__inputSection'>
           <label className='newProduct__inputLabel' htmlFor='name'>
             Description
           </label>
@@ -143,11 +143,12 @@ const NewProduct = () => {
             className='newProduct__input'
             id='description'
             name='description'
-            placeholder='Enter details'
+            placeholder='Enter Product Details'
             value={description}
             onChange={handleDescription}
           />
         </div>
+
         <div className='newProduct__formButtonSection'>
           <motion.button
             whileTap={{ scale: 0.85 }}
