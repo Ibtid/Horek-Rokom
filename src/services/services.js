@@ -12,8 +12,18 @@ const removeProduct = (id) => {
   return http.delete(`/products/${id}`);
 };
 
+const addNewUser = (data) => {
+  return http.post('/customers', data);
+};
+
+const getAllUser = () => {
+  return http.get('/customers');
+};
+
 export default {
   getAllProducts,
   addNewProduct,
   removeProduct,
+  addNewUser,
+  getAllUser,
 };

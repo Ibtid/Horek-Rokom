@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Product from './Product';
-import { AnimatePresence, motion } from 'framer-motion';
 import './ProductList.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
 import Service from '../../services/services';

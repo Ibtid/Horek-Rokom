@@ -77,6 +77,12 @@ const reducer = (state, action) => {
         return { ...state };
       }
 
+    case 'RETRIEVE_USER':
+      return {
+        ...state,
+        registeredUser: action.registeredUser,
+      };
+
     case 'LOGIN':
       state.registeredUser.map((user) => {
         if (

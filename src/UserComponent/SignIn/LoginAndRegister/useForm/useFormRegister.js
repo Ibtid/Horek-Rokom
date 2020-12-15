@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useStateValue } from '../../../../StateProvider/StateProvider';
-import { v4 as uuidv4 } from 'uuid';
 import { useHistory } from 'react-router-dom';
+import Service from '../../../../services/services';
 
 const useForm = (callBack, validate) => {
   let history = useHistory();
@@ -27,14 +27,20 @@ const useForm = (callBack, validate) => {
     setErrors(validate(values));
     //callBack();
     if (Object.keys(errors).length === 0) {
-      dispatch({
-        type: 'Register_User',
-        registeredUser: {
-          id: uuidv4(),
-          username: values.username,
-          email: values.email,
-          password: values.password,
-        },
+      var data = {
+        username: values.username,
+        email: values.email,
+        password: values.password,
+      };
+      Service.addNewUser(data).then((response) => {
+        dispatch({
+          type: 'Register_User',
+          registeredUser: {
+            username: response.data.username,
+            email: response.data.email,
+            password: response.data.password,
+          },
+        });
       });
     }
     setValues({

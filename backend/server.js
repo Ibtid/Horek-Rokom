@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 require('./routes/products.routes')(app);
+require('./routes/customer.routes')(app);
 
 //set port, listen for requests
 app.listen(5000, () => {
