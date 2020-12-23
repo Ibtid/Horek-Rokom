@@ -63,7 +63,7 @@ const CartSummary = () => {
           <div className='cartSummary__totalCost'>${total}</div>
         </div>
 
-        {state.currentUser ? (
+        {state.currentUser[0] ? (
           <Link to='/checkout' className='cartSummary__button'>
             <Button
               type='danger'
