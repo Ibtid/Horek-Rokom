@@ -90,7 +90,12 @@ const reducer = (state, action) => {
           user.password === action.currentUser.password
         ) {
           alert('logged in');
-          state = { ...state, currentUser: [action.currentUser] };
+          state = {
+            ...state,
+            currentUser: [
+              { id: user.custID, email: user.email, ...action.currentUser },
+            ],
+          };
         }
       });
       if (state.currentUser.length === 0) alert('invalid username or password');

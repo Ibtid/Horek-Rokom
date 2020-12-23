@@ -4,6 +4,7 @@
   margin-top: 0.5rem;
   font-family: 'Ubuntu Condensed', sans-serif;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .default {

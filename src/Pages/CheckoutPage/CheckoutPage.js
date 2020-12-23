@@ -4,13 +4,17 @@ import StripeCheckout from 'react-stripe-checkout';
 import Button from '../../SharedComponents/UIElements/Buttons/Buttons';
 
 import './CheckoutPage.css';
+import { useStateValue } from '../../StateProvider/StateProvider';
 
 const CheckoutPage = () => {
+  const [state, dispatch] = useStateValue();
+
   const [product, setProduct] = useState({
     name: 'React from FB',
     price: 10,
     productBy: 'facebook',
   });
+
   const makePayment = (token) => {
     const body = {
       token,
@@ -36,7 +40,7 @@ const CheckoutPage = () => {
     <div className='checkoutpage'>
       <div className='checkoutpage__container'>
         <h1 className='checkoutpage__greeting'>
-          Hello Ibtid, please confirm your order.
+          {`Hello ${state.currentUser[0].username}, please confirm your order.`}
         </h1>
         <div className='checkoutpage__body'>
           <div className='checkoutpage__imageContainer'>
@@ -45,7 +49,9 @@ const CheckoutPage = () => {
           <div className='checkoutpage__userInfo'>
             <div className='checkoutpage__emailContainer'>
               <div className='checkoutpage__emailTitle'>E-mail:</div>
-              <div className='checkoutpage__emailUser'>ibtid@gmail.com</div>
+              <div className='checkoutpage__emailUser'>
+                {state.currentUser[0].email}
+              </div>
             </div>
             <div className='checkoutpage__inputSection'>
               <label className='checkoutpage__inputLabel' htmlFor='name'>

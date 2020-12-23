@@ -36,6 +36,7 @@ const useForm = (callBack, validate) => {
         dispatch({
           type: 'Register_User',
           registeredUser: {
+            custID: response.data.custID,
             username: response.data.username,
             email: response.data.email,
             password: response.data.password,

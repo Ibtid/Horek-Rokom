@@ -26,7 +26,6 @@ const useForm = (callBack, validate) => {
       dispatch({
         type: 'LOGIN',
         currentUser: {
-          id: uuidv4(),
           username: values.username,
           password: values.password,
         },

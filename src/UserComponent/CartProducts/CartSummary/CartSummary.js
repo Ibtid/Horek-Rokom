@@ -5,6 +5,7 @@ import { useStateValue } from '../../../StateProvider/StateProvider';
 import ForwardIcon from '@material-ui/icons/Forward';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CartSummary = () => {
   const [state, dispatch] = useStateValue();
@@ -48,9 +49,18 @@ const CartSummary = () => {
           <div className='cartSummary__totalTitle'>Total:</div>
           <div className='cartSummary__totalCost'>${total}</div>
         </div>
-        <div className='cartSummary__button'>
-          <Button type='danger' icon={forward} message='Proceed Checkout' />
-        </div>
+
+        {state.currentUser ? (
+          <Link to='/checkout' className='cartSummary__button'>
+            <Button type='danger' icon={forward} message='Proceed Checkout' />
+          </Link>
+        ) : (
+          <Button
+            type='danger'
+            icon={forward}
+            message='Sign in to proceed checkout'
+          />
+        )}
       </div>
     </motion.div>
   );
