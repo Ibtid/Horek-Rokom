@@ -1,0 +1,26 @@
+.orderSummary {
+  background-color: #fffafa;
+  border-radius: 10px;
+  border: 0.1rem solid #121212;
+}
+
+.orderSummary__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  justify-content: space-between;
+}
+
+.orderSummary__orderInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderSummary__title {
+  margin-right: 0.7rem;
+}
+
+.orderSummary__segment {
+  display: flex;
+  padding: 0.2rem;
+}

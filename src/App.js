@@ -9,6 +9,7 @@ import Home from './Pages/Homepage/Home';
 import ShoppingCart from './Pages/ShoppingCart/ShoppingCart';
 import SignInForm from './Pages/SignIn/SignInForm';
 import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
+import OrderPage from './Pages/OrderPage/OrderPage';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         </Route>
         <Route path='/orders'>
           <Navbar />
-          <h1>ORDERS</h1>
+          <OrderPage />
         </Route>
         <Route path='/signin'>
           <SignInForm />
