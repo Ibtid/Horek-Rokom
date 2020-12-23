@@ -7,18 +7,12 @@ import './CheckoutPage.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
 
 const CheckoutPage = () => {
-  const [state, dispatch] = useStateValue();
-
-  const [product, setProduct] = useState({
-    name: 'React from FB',
-    price: 10,
-    productBy: 'facebook',
-  });
+  const [{ cartSummary, currentUser }, dispatch] = useStateValue();
 
   const makePayment = (token) => {
     const body = {
       token,
-      product,
+      cartSummary,
     };
     const headers = {
       'Content-Type': 'application/json',
@@ -40,7 +34,7 @@ const CheckoutPage = () => {
     <div className='checkoutpage'>
       <div className='checkoutpage__container'>
         <h1 className='checkoutpage__greeting'>
-          {`Hello ${state.currentUser[0].username}, please confirm your order.`}
+          {`Hello ${currentUser[0].username}, please confirm your order.`}
         </h1>
         <div className='checkoutpage__body'>
           <div className='checkoutpage__imageContainer'>
@@ -50,7 +44,7 @@ const CheckoutPage = () => {
             <div className='checkoutpage__emailContainer'>
               <div className='checkoutpage__emailTitle'>E-mail:</div>
               <div className='checkoutpage__emailUser'>
-                {state.currentUser[0].email}
+                {currentUser[0].email}
               </div>
             </div>
             <div className='checkoutpage__inputSection'>
@@ -82,7 +76,8 @@ const CheckoutPage = () => {
                 stripeKey='pk_test_51HZDOcHKFvH5Oe64NcisIbwlEP1GXpFzpIWKhNeM6Qj6rgbFsHfxwJNFHyFXXtkfSosJZsbq2hLBE1nUWJMOmyl700jMbS2Mwn'
                 token={makePayment}
                 name='Card Info'
-                amount={product * 100}>
+                currency='USD'
+                amount={cartSummary.total * 100}>
                 <Button type='danger' message='Pay with card' />
               </StripeCheckout>
             </div>

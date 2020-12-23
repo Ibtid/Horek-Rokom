@@ -3,6 +3,7 @@ export const initialState = {
   cart: [],
   registeredUser: [],
   currentUser: [],
+  cartSummary: [],
 };
 
 const reducer = (state, action) => {
@@ -51,6 +52,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         cart: cartProducts,
+      };
+
+    case 'KEEP_CART_SUMMARY':
+      return {
+        ...state,
+        cartSummary: action.cartSummary,
       };
 
     case 'Register_User':

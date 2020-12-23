@@ -9,13 +9,26 @@ import { Link } from 'react-router-dom';
 
 const CartSummary = () => {
   const [state, dispatch] = useStateValue();
+
   const subtotal = state.cart.reduce((accumulator, product) => {
     return (accumulator = accumulator + parseInt(product.price));
   }, 0);
+
   const shipping = state.cart.length * 2;
   const tax = 0.1 * subtotal;
   const total = tax + subtotal + shipping;
   const forward = <ForwardIcon />;
+
+  const keepCartSummary = () => {
+    dispatch({
+      type: 'KEEP_CART_SUMMARY',
+      cartSummary: {
+        total: total,
+        items: state.cart.length,
+      },
+    });
+  };
+
   return (
     <motion.div
       animate={{ y: 480, opacity: 1 }}
@@ -52,7 +65,12 @@ const CartSummary = () => {
 
         {state.currentUser ? (
           <Link to='/checkout' className='cartSummary__button'>
-            <Button type='danger' icon={forward} message='Proceed Checkout' />
+            <Button
+              type='danger'
+              icon={forward}
+              onClick={keepCartSummary}
+              message='Proceed Checkout'
+            />
           </Link>
         ) : (
           <Button

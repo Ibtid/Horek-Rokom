@@ -5,9 +5,9 @@ module.exports = (app) => {
   const { v4: uuidv4 } = require('uuid');
 
   app.post('/payment', (req, res) => {
-    const { product, token } = req.body;
-    console.log('PRODUCT ', product);
-    console.log('PRICE ', product.price);
+    const { cartSummary, token } = req.body;
+    console.log('PRODUCT ', cartSummary);
+    console.log('PRICE ', cartSummary.total);
     const idempotencyKey = uuidv4();
 
     return stripe.customers
@@ -18,7 +18,7 @@ module.exports = (app) => {
       .then((customer) => {
         stripe.charges.create(
           {
-            amount: product.price * 100,
+            amount: cartSummary.total * 100,
             currency: 'usd',
             customer: customer.id,
             receipt_email: token.email,
@@ -26,6 +26,7 @@ module.exports = (app) => {
           { idempotencyKey }
         );
       })
+
       .then((result) => res.status(200).json(result))
       .catch((err) => console.log(err));
   });
