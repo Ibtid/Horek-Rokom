@@ -1,0 +1,44 @@
+.checkoutpage {
+  display: grid;
+  place-items: center;
+  height: 90vh;
+}
+.checkoutpage__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkoutpage__body {
+  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.checkoutpage__imageContainer {
+  height: 30vh;
+  margin-right: 5rem;
+}
+
+.checkoutpage__image {
+  height: 30vh;
+}
+
+.checkoutpage__userInfo {
+  background-color: #121212;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  border-radius: 10px;
+}
+
+.checkoutpage__emailContainer {
+  display: flex;
+  justify-content: space-between;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+}
+
+.checkoutpage__inputSection {
+  display: flex;
+  flex-direction: column;
+}

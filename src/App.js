@@ -8,6 +8,7 @@ import Navbar from './SharedComponents/UIElements/Navbar/Navbar';
 import Home from './Pages/Homepage/Home';
 import ShoppingCart from './Pages/ShoppingCart/ShoppingCart';
 import SignInForm from './Pages/SignIn/SignInForm';
+import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         </Route>
         <Route path='/admin'>
           <Admin />
+        </Route>
+        <Route path='/checkout'>
+          <Navbar />
+          <CheckoutPage />
         </Route>
         <Route path='/orders'>
           <Navbar />
