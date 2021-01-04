@@ -2,12 +2,53 @@ import React, { useState } from 'react';
 import advert from '../../Resources/Picture/svg/undraw_online_payments_luau.svg';
 import StripeCheckout from 'react-stripe-checkout';
 import Button from '../../SharedComponents/UIElements/Buttons/Buttons';
+import { v4 as uuidv4 } from 'uuid';
+import { useHistory } from 'react-router-dom';
 
 import './CheckoutPage.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
 
 const CheckoutPage = () => {
-  const [{ cartSummary, currentUser }, dispatch] = useStateValue();
+  let history = useHistory();
+  const orderid = uuidv4();
+  const [
+    { orderDetails, order, cart, cartSummary, currentUser },
+    dispatch,
+  ] = useStateValue();
+
+  const createOrder = () => {
+    dispatch({
+      type: 'CREATE_ORDER',
+      order: {
+        orderID: orderid,
+        userID: currentUser[0].id,
+        address: 'Uttara,Dhaka',
+        items: cart.length,
+        totalPrice: cartSummary.total,
+        date: '11/11/11',
+      },
+    });
+    cart.map((cart) => {
+      dispatch({
+        type: 'CREATE_ORDER_SUMMARY',
+        orderDetails: {
+          orderid: orderid,
+          productId: cart.id,
+          image: cart.image,
+          description: cart.description,
+          price: cart.price,
+        },
+      });
+    });
+    console.log(order);
+    console.log(orderDetails);
+  };
+
+  const emptyCart = () => {
+    dispatch({
+      type: 'EMPTY_CART',
+    });
+  };
 
   const makePayment = (token) => {
     const body = {
@@ -27,6 +68,11 @@ const CheckoutPage = () => {
         console.log('Response ', response);
         const { status } = response;
         console.log('STATUS ', status);
+        if (status === 200) {
+          createOrder();
+          emptyCart();
+          history.push('/orders');
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -78,7 +124,11 @@ const CheckoutPage = () => {
                 name='Card Info'
                 currency='USD'
                 amount={cartSummary.total * 100}>
-                <Button type='danger' message='Pay with card' />
+                <Button
+                  type='danger'
+                  message='Pay with card'
+                  //onClick={createOrder}
+                />
               </StripeCheckout>
             </div>
           </div>

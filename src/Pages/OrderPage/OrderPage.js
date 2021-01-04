@@ -1,5 +1,6 @@
 import React from 'react';
 import ad from '../../Resources/Picture/Advertisement/images (1).jpg';
+import title from '../../Resources/Picture/Advertisement/Recent.jpg';
 import OrderList from '../../UserComponent/Orders/OrderList/OrderList';
 
 import './OrderPage.css';
@@ -16,7 +17,13 @@ const OrderPage = () => {
             <OrderList />
           </div>
         </div>
-        <div className='orderPage__orderItems'>Ordered Items</div>
+        <div className='orderPage__TitleImageContainer'>
+          <img
+            className='orderPage__TitleImage'
+            src={title}
+            alt='RECENT ORDERS'
+          />
+        </div>
       </div>
     </div>
   );

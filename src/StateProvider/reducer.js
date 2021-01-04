@@ -4,6 +4,8 @@ export const initialState = {
   registeredUser: [],
   currentUser: [],
   cartSummary: [],
+  order: [],
+  orderDetails: [],
 };
 
 const reducer = (state, action) => {
@@ -60,6 +62,13 @@ const reducer = (state, action) => {
         cartSummary: action.cartSummary,
       };
 
+    case 'EMPTY_CART':
+      return {
+        ...state,
+        cart: [],
+        cartSummary: [],
+      };
+
     case 'Register_User':
       let userIsUnique = true;
       state.registeredUser.map((user) => {
@@ -112,6 +121,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         currentUser: [],
+      };
+
+    case 'CREATE_ORDER':
+      return {
+        ...state,
+        order: [...state.order, action.order],
+      };
+
+    case 'CREATE_ORDER_SUMMARY':
+      return {
+        ...state,
+        orderDetails: [...state.orderDetails, action.orderDetails],
       };
 
     default:
