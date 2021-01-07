@@ -16,6 +16,18 @@
   margin-right: 0.7rem;
   margin-left: 0.7rem;
   justify-content: space-between;
+  max-width: 100%;
+}
+
+.orderSummary__orderDetails {
+  max-width: 100%;
+  overflow: auto;
+  height: auto;
+}
+
+.orderSummary__orderDetails::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 .orderSummary__orderInfo {

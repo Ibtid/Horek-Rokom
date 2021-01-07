@@ -35,7 +35,7 @@ const CheckoutPage = () => {
           orderid: orderid,
           productId: cart.id,
           image: cart.image,
-          description: cart.description,
+          name: cart.name,
           price: cart.price,
         },
       });

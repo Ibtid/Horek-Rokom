@@ -18,38 +18,6 @@ const OrderList = () => {
             date={orders.date}
           />
         ))}
-        <OrderSummary
-          orderID='180042143'
-          userID='4138'
-          address='Uttara,Dhaka-1230'
-          items='6'
-          totalPrice='1000'
-          date='03/02/2021'
-        />
-        <OrderSummary
-          orderID='180042143'
-          userID='4138'
-          address='Uttara,Dhaka-1230'
-          items='6'
-          totalPrice='1000'
-          date='03/02/2021'
-        />
-        <OrderSummary
-          orderID='180042143'
-          userID='4138'
-          address='Uttara,Dhaka-1230'
-          items='6'
-          totalPrice='1000'
-          date='03/02/2021'
-        />
-        <OrderSummary
-          orderID='180042143'
-          userID='4138'
-          address='Uttara,Dhaka-1230'
-          items='6'
-          totalPrice='1000'
-          date='03/02/2021'
-        />
       </div>
     </div>
   );

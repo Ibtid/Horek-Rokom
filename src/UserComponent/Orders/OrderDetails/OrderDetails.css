@@ -1,0 +1,15 @@
+.orderDetails {
+  background-color: #f1f1f1;
+  height: auto;
+  transition: height 0.3s ease-out;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.NO_DETAILS {
+  display: none;
+}
+
+.orderDetails__products {
+  display: flex;
+  flex-direction: row;
+}

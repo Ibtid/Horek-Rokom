@@ -1,15 +1,26 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
+import OrderDetails from '../../OrderDetails/OrderDetails';
 import './OrderSummary.css';
 
 const OrderSummary = (props) => {
+  const [showOrderDetails, setShowOrderDetails] = useState(false);
+
+  var productsDisplay = showOrderDetails ? 'orderDetails' : 'NO_DETAILS';
+  var collapsed = showOrderDetails ? 'not__collapsed' : 'collapsed';
+
+  const switchOrderDetails = () => {
+    setShowOrderDetails(!showOrderDetails);
+  };
+
   return (
     <motion.div
       className='orderSummary'
       animate={{ scale: 0.93, opacity: 1 }}
       transition={{ duration: 0.3 }}
-      whileHover={{ scale: 1 }}
-      whileTap={{ scale: 0.9 }}>
+      whileHover={{ scale: 0.96 }}
+      whileTap={{ scale: 0.9 }}
+      onClick={switchOrderDetails}>
       <div className='orderSummary__container'>
         <div className='orderSummary__orderInfo'>
           <div className='orderSummary__segment'>
@@ -40,6 +51,12 @@ const OrderSummary = (props) => {
             <div className='orderSummary__title'>Purchased:</div>
             <div className='orderSummary__date'>x{props.items}</div>
           </div>
+        </div>
+        <div className={`orderSummary__orderDetails ${collapsed}`}>
+          <OrderDetails
+            productsDisplay={productsDisplay}
+            orderID={props.orderID}
+          />
         </div>
       </div>
     </motion.div>
