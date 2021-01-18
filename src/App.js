@@ -10,6 +10,7 @@ import ShoppingCart from './Pages/ShoppingCart/ShoppingCart';
 import SignInForm from './Pages/SignIn/SignInForm';
 import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
 import OrderPage from './Pages/OrderPage/OrderPage';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -41,6 +42,19 @@ function App() {
           <Home />
         </Route>
       </Switch>
+      <Toaster
+        position='bottom-right'
+        toastOptions={{
+          style: {
+            margin: '0vh 0vh 5vh 0vh ',
+            background: '#f15151',
+            color: '#fff',
+            zIndex: -100,
+            fontSize: '0.8rem',
+          },
+          duration: 3000,
+        }}
+      />
     </Router>
   );
 }

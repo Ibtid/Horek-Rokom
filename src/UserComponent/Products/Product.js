@@ -6,12 +6,15 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import './Product.css';
 import { useStateValue } from '../../StateProvider/StateProvider';
 import Modal from '../../SharedComponents/UIElements/Modal/ProductModal/Modal';
+import toast from 'react-hot-toast';
 
 const Product = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [state, dispatch] = useStateValue();
   const addProductIcon = <AddShoppingCartIcon />;
   const viewDetailsIcon = <VisibilityIcon />;
+
+  const notify = () => toast(`${props.name} added to Cart`);
 
   const addProductToCart = () => {
     dispatch({
@@ -24,6 +27,7 @@ const Product = (props) => {
         description: props.description,
       },
     });
+    notify();
   };
 
   return (

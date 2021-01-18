@@ -1,3 +1,5 @@
+import toast from 'react-hot-toast';
+
 export const initialState = {
   products: [],
   cart: [],
@@ -106,6 +108,7 @@ const reducer = (state, action) => {
           user.password === action.currentUser.password
         ) {
           alert('logged in');
+
           state = {
             ...state,
             currentUser: [
