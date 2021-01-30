@@ -1,7 +1,7 @@
 import React from 'react';
 import ad from '../../Resources/Picture/Advertisement/images (1).jpg';
 import title from '../../Resources/Picture/Advertisement/Recent.jpg';
-import OrderList from '../../UserComponent/Orders/OrderList/OrderList';
+import OrderList from '../../SharedComponents/OrderComponent/OrderList/OrderList';
 
 import './OrderPage.css';
 

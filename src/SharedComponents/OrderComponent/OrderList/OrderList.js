@@ -1,6 +1,6 @@
 import React from 'react';
 import './OrderList.css';
-import OrderSummary from './OrderSummary/OrderSummary';
+import OrderSummary from '../OrderSummary/OrderSummary';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 
 const OrderList = () => {

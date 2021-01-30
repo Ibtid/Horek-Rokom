@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-import OrderDetails from '../../OrderDetails/OrderDetails';
+import OrderDetails from '../OrderDetails/OrderDetails';
 import './OrderSummary.css';
 
 const OrderSummary = (props) => {

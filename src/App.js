@@ -11,6 +11,7 @@ import SignInForm from './Pages/SignIn/SignInForm';
 import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
 import OrderPage from './Pages/OrderPage/OrderPage';
 import { Toaster } from 'react-hot-toast';
+import AdminOrder from './Admin/Pages/AdminOrder/AdminOrder';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       <Switch>
         <Route path='/admin/control'>
           <AdminControl />
+        </Route>
+        <Route path='/admin/order'>
+          <AdminOrder />
         </Route>
         <Route path='/admin'>
           <Admin />

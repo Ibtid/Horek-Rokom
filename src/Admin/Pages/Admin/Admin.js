@@ -15,7 +15,9 @@ const Admin = () => {
         <Link to='/admin/control' className='admin__Link'>
           <Button type='danger' message='Go to Store' />
         </Link>
-        <Button type='danger' message='Go to Orders List' />
+        <Link to='/admin/order' className='admin__Link'>
+          <Button type='danger' message='Go to Orders List' />
+        </Link>
       </div>
     </div>
   );
