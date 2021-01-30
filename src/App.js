@@ -52,7 +52,7 @@ function App() {
             zIndex: -100,
             fontSize: '0.8rem',
           },
-          duration: 3000,
+          duration: 2500,
         }}
       />
     </Router>
