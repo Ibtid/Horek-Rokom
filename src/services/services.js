@@ -34,6 +34,12 @@ const getOrderById = (id) => {
 const getOrderDetailsById = (id) => {
   return http.get(`/orderDetails/${id}`);
 };
+const getAllOrders = () => {
+  return http.get('/orders');
+};
+const getAllOrdersDetails = () => {
+  return http.get('/orderDetails');
+};
 export default {
   getAllProducts,
   addNewProduct,
@@ -44,4 +50,6 @@ export default {
   addOrderDetails,
   getOrderById,
   getOrderDetailsById,
+  getAllOrders,
+  getAllOrdersDetails,
 };
