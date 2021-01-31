@@ -135,7 +135,7 @@ const reducer = (state, action) => {
     case 'CREATE_ORDER_SUMMARY':
       return {
         ...state,
-        orderDetails: [...state.orderDetails, action.orderDetails],
+        orderDetails: [action.orderDetails],
       };
 
     default:

@@ -53,7 +53,7 @@ OrderDetails.findByOrderID = (userID, result) => {
 
       if (res.length) {
         console.log('found order: ', res);
-        result(null, res[0]);
+        result(null, res);
         return;
       }
 
