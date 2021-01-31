@@ -6,7 +6,7 @@ import OrderProducts from './OrderProducts';
 const OrderDetails = (props) => {
   const [state, dispatch] = useStateValue();
   const orderProducts = state.orderDetails.filter(
-    (orderDetails) => orderDetails.orderid === props.orderID
+    (orderDetails) => orderDetails.orderID === props.orderID
   );
   console.log(orderProducts);
   return (
@@ -16,7 +16,7 @@ const OrderDetails = (props) => {
           <OrderProducts
             productId={productsInfo.productId}
             image={productsInfo.image}
-            name={productsInfo.name}
+            name={productsInfo.productname}
             price={productsInfo.price}
           />
         ))}

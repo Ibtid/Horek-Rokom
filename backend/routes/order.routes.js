@@ -8,7 +8,7 @@ module.exports = (app) => {
   // Retrieve all Orders
   app.get('/orders', orders.findAll);
 
-  // Retrieve a single Order with orderId
+  // Retrieve a single Order with useId
   app.get('/orders/:userID', orders.findOne);
 
   //Create a new orderDetail
@@ -18,5 +18,5 @@ module.exports = (app) => {
   app.get('/orderDetails', orderDetails.findAll);
 
   // Retrieve OrderDetails with orderId
-  app.get('/orderDetails/:orderID', orderDetails.findOne);
+  app.get('/orderDetails/:userID', orderDetails.findOne);
 };

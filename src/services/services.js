@@ -20,10 +20,28 @@ const getAllUser = () => {
   return http.get('/customers');
 };
 
+const addOrder = (data) => {
+  return http.post('/orders', data);
+};
+
+const addOrderDetails = (data) => {
+  return http.post('/orderDetails', data);
+};
+
+const getOrderById = (id) => {
+  return http.get(`/orders/${id}`);
+};
+const getOrderDetailsById = (id) => {
+  return http.get(`/orderDetails/${id}`);
+};
 export default {
   getAllProducts,
   addNewProduct,
   removeProduct,
   addNewUser,
   getAllUser,
+  addOrder,
+  addOrderDetails,
+  getOrderById,
+  getOrderDetailsById,
 };

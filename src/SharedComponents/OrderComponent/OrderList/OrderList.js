@@ -5,17 +5,20 @@ import { useStateValue } from '../../../StateProvider/StateProvider';
 
 const OrderList = () => {
   const [state, dispatch] = useStateValue();
+  console.log(state.order[0]);
+
   return (
     <div className='orderList'>
       <div className='orderList__orderSummary'>
-        {state.order.map((orders) => (
+        {state.order[0]?.map((orders) => (
           <OrderSummary
+            key={orders.orderID}
             orderID={orders.orderID}
             userID={orders.userID}
             address={orders.address}
-            items={orders.items}
+            items={orders.totalItem}
             totalPrice={orders.totalPrice}
-            date={orders.date}
+            date={orders.orderDate}
           />
         ))}
       </div>

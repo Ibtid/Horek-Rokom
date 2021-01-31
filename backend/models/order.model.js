@@ -12,7 +12,7 @@ const Order = function (order) {
 
 Order.create = (newOrder, result) => {
   sql.query(
-    'INSERT INTO orders SET orderID = ?, userID = ?, address = ?, totalItem = ?, totalPrice = ?, delievered = ?',
+    'INSERT INTO orders SET orderID = ?, userID = ?, address = ?, totalItem = ?, totalPrice = ?, delievered = ?, orderDate=curDate()',
     [
       newOrder.orderID,
       newOrder.userID,
@@ -27,9 +27,9 @@ Order.create = (newOrder, result) => {
         result(err, null);
         return;
       }
-
+      console.log(res);
       console.log('created order: ', { ...newOrder });
-      result(null, { ...newOrder });
+      result(null, { ...newOrder, orderDate: 'Hi' });
     }
   );
 };
@@ -56,8 +56,8 @@ Order.findByOrderID = (userID, result) => {
     }
 
     if (res.length) {
-      console.log('found order: ', res[0]);
-      result(null, res[0]);
+      console.log('found order: ', res);
+      result(null, res);
       return;
     }
 

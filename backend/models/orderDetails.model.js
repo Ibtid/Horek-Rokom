@@ -4,12 +4,17 @@ const sql = require('./db.js');
 const OrderDetails = function (orderDetails) {
   this.orderID = orderDetails.orderID;
   this.productID = orderDetails.productID;
+  this.userID = orderDetails.userID;
 };
 
 OrderDetails.create = (newOrderDetails, result) => {
   sql.query(
-    'CALL insertOrderDetails(?, ?)',
-    [newOrderDetails.orderID, newOrderDetails.productID],
+    'CALL insertOrderDetails(?, ?, ?)',
+    [
+      newOrderDetails.orderID,
+      newOrderDetails.productID,
+      newOrderDetails.userID,
+    ],
     (err, res) => {
       if (err) {
         console.log('error: ', err);
@@ -36,9 +41,9 @@ OrderDetails.getAll = (result) => {
   });
 };
 
-OrderDetails.findByOrderID = (orderID, result) => {
+OrderDetails.findByOrderID = (userID, result) => {
   sql.query(
-    `SELECT * FROM orderDetails WHERE orderID = '${orderID}'`,
+    `SELECT * FROM orderDetails WHERE userID = '${userID}'`,
     (err, res) => {
       if (err) {
         console.log('error: ', err);
@@ -47,7 +52,7 @@ OrderDetails.findByOrderID = (orderID, result) => {
       }
 
       if (res.length) {
-        console.log('found order: ', res[0]);
+        console.log('found order: ', res);
         result(null, res[0]);
         return;
       }

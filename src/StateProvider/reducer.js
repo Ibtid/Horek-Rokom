@@ -129,7 +129,7 @@ const reducer = (state, action) => {
     case 'CREATE_ORDER':
       return {
         ...state,
-        order: [...state.order, action.order],
+        order: [action.order],
       };
 
     case 'CREATE_ORDER_SUMMARY':

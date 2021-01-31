@@ -12,6 +12,7 @@ exports.create = (req, res) => {
   const orderDetails = new OrderDetails({
     orderID: req.body.orderID,
     productID: req.body.productID,
+    userID: req.body.userID,
   });
 
   OrderDetails.create(orderDetails, (err, data) => {
@@ -36,7 +37,7 @@ exports.findAll = (req, res) => {
 
 // Find a single Customer with a customerId
 exports.findOne = (req, res) => {
-  OrderDetails.findByOrderID(req.params.orderID, (err, data) => {
+  OrderDetails.findByOrderID(req.params.userID, (err, data) => {
     if (err) {
       if (err.kind === 'not_found') {
         res.status(404).send({
