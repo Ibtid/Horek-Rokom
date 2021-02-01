@@ -10,17 +10,22 @@ import Service from '../../services/services';
 
 const CheckoutPage = () => {
   let history = useHistory();
+  const [address, setaddress] = useState();
   const orderid = uuidv4();
   const [
     { orderDetails, order, cart, cartSummary, currentUser },
     dispatch,
   ] = useStateValue();
 
+  const handleAddress = (event) => {
+    setaddress(event.target.value);
+  };
+
   const createOrder = () => {
     var data = {
       orderID: orderid,
       userID: currentUser[0].id,
-      address: 'Uttara,Dhaka',
+      address: address,
       totalItem: cart.length,
       totalPrice: cartSummary.total,
       delivered: 0,
@@ -101,6 +106,8 @@ const CheckoutPage = () => {
                 id='shipp'
                 name='name'
                 placeholder='Enter Shipping Address'
+                value={address}
+                onChange={handleAddress}
               />
             </div>
             <div className='checkoutpage__inputSection'>

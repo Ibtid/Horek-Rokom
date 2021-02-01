@@ -3,6 +3,7 @@ import OrderList from '../../../SharedComponents/OrderComponent/OrderList/OrderL
 import Header from '../../Components/Header/Header';
 import Service from '../../../services/services';
 import { useStateValue } from '../../../StateProvider/StateProvider';
+import './AdminOrder.css';
 
 const AdminOrder = () => {
   const [state, dispatch] = useStateValue();
@@ -33,9 +34,11 @@ const AdminOrder = () => {
     console.log(state.orderDetails);
   };
   return (
-    <div>
+    <div className='adminOrder'>
       <Header />
-      <OrderList />
+      <div className='admin__OrderPage'>
+        <OrderList />
+      </div>
     </div>
   );
 };
