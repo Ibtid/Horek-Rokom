@@ -37,7 +37,9 @@ const AdminOrder = () => {
     <div className='adminOrder'>
       <Header />
       <div className='admin__OrderPage'>
-        <OrderList />
+        <div className='admin__OrderPageContainer'>
+          <OrderList />
+        </div>
       </div>
     </div>
   );

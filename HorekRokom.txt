@@ -1,0 +1,99 @@
+===============create database
+
+create database HorekRokom;
+
+===============================================Grant permission
+
+GRANT ALL PRIVILEGES ON HorekRokom.* TO 'Ibtid'@'localhost';
+
+==============================================createProductTable
+
+CREATE TABLE IF NOT EXISTS PRODUCTS(
+id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(50) not null,
+price DOUBLE  not null,
+image VARCHAR(550) not null,
+description VARCHAR(550) not null
+)ENGINE = InnoDB;
+
+============================================to remove connection error
+ALTER USER 'Ibtid'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass123'
+
+==========================================alter products table
+ALTER TABLE products
+MODIFY COLUMN image longtext not null;
+
+
+==========================================create customers table
+create table customers(
+custID varchar(95),
+username varchar(65) not null,
+email varchar(30) not null,
+password varchar(100) not null,
+constraint pk_cust primary key(custID),
+constraint unique_cust_username unique(username),
+constraint unique_cust_email unique(email)
+);
+
+---Function to create the custID---
+CREATE FUNCTION createCustID (username varchar(65), email varchar(30))
+returns varchar(95) deterministic
+RETURN CONCAT(username, email);
+
+=====================================create Order Table
+create table orders(
+orderID varchar(300),
+userID varchar(95) not null,
+address varchar(500) not null,
+totalItem bigint not null,
+totalPrice double not null,	
+delievered boolean not null,
+orderDate date default(CURRENT_TIMESTAMP),
+constraint pk_order primary key(orderID),
+constraint fk_order foreign key(userID) references customers(custID)
+);
+
+
+====================================create OrderDetails Table
+create table orderDetails(
+orderID varchar(300) not null,
+productID bigint not null,
+productname varchar(50) not null,
+image longtext not null,
+price double not null,
+constraint fk_orderDetails_order foreign key(orderID) references orders(orderID),
+constraint fk_orderDetails_product foreign key(productID) references PRODUCTS(id)
+);
+
+
+Alter Table orderDetails Add column userID varchar(95);
+Alter Table orderDetails Add constraint fk_orderDetails_userID foreign key(userID) references orders(userID);
+
+
+DELIMITER $$
+
+CREATE PROCEDURE insertOrderdetails(orderID varchar(300), productID bigint, userID varchar(95))
+BEGIN
+DECLARE productname varchar(50);
+DECLARE images longtext;
+DECLARE prices double;
+
+
+SELECT name 
+INTO productname
+FROM PRODUCTS
+WHERE id = productID;
+
+SELECT image
+INTO images
+FROM PRODUCTS
+WHERE id = productID;
+
+SELECT price
+INTO prices
+FROM PRODUCTS
+WHERE id = productID;
+
+INSERT INTO orderDetails VALUES(orderID,productID,productname, images,prices,userID);
+END$$
+DELIMITER ;
