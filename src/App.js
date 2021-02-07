@@ -51,8 +51,8 @@ function App() {
         toastOptions={{
           style: {
             margin: '0vh 0vh 5vh 0vh ',
-            background: '#f15151',
-            color: '#fff',
+            background: '#ffcc57',
+            color: '#3b3b3b',
             zIndex: -100,
             fontSize: '0.8rem',
           },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import advert from '../../Resources/Picture/svg/undraw_online_payments_luau.svg';
+import advert from '../../Resources/Picture/svg/undraw_online_payments_luau (1).svg';
 import StripeCheckout from 'react-stripe-checkout';
 import Button from '../../SharedComponents/UIElements/Buttons/Buttons';
 import { v4 as uuidv4 } from 'uuid';
@@ -23,7 +23,7 @@ const CheckoutPage = () => {
 
   const createOrder = () => {
     var data = {
-      orderID: orderid,
+      /*orderID: orderid,*/
       userID: currentUser[0].id,
       address: address,
       totalItem: cart.length,
@@ -35,7 +35,6 @@ const CheckoutPage = () => {
     });
     cart.map((cart) => {
       var data = {
-        orderID: orderid,
         productID: cart.id,
         userID: currentUser[0].id,
       };

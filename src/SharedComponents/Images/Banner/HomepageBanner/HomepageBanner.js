@@ -24,9 +24,6 @@ const HomepageBanner = () => {
     <div className='homepageBanner'>
       <Slider {...settings} className='homepageBanner__container'>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner1} alt='banner' />
-        </div>
-        <div className='homepageBanner__imageContainer'>
           <img className='homepageBanner__image' src={banner2} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>

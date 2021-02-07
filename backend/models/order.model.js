@@ -12,9 +12,9 @@ const Order = function (order) {
 
 Order.create = (newOrder, result) => {
   sql.query(
-    'INSERT INTO orders SET orderID = ?, userID = ?, address = ?, totalItem = ?, totalPrice = ?, delievered = ?, orderDate=curDate()',
+    'INSERT INTO orders SET userID = ?, address = ?, totalItem = ?, totalPrice = ?, delievered = ?, orderDate=curDate()',
     [
-      newOrder.orderID,
+      /*newOrder.orderID,*/
       newOrder.userID,
       newOrder.address,
       newOrder.totalItem,

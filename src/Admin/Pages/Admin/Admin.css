@@ -1,26 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
 
 .admin__main {
   display: grid;
   place-items: center;
-  background-color: #f1f1f1;
+  background-color: #f7f7f7;
   height: 100vh;
 }
 .login__container {
   padding: 4rem 3.5rem 3rem 3.5rem;
   text-align: center;
-  background-color: #121212;
+  background-color: #3b3b3b;
   border-radius: 10px;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35), 0 1rem;
 }
 
 .admin__main__text {
   padding: 2rem;
-  font-family: 'Ubuntu Condensed', sans-serif;
-
-  color: #f5f5f5;
+  font-family: 'Averia Serif Libre', cursive;
+  color: #f7f7f7;
 }
 
 .login__container > img {

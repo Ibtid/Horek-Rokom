@@ -2,7 +2,7 @@
   display: grid;
   place-items: center;
   height: 90vh;
-  background-color: #f1f1f1;
+  background-color: #f7f7f7;
 }
 .checkoutpage__container {
   display: flex;
@@ -26,7 +26,7 @@
 }
 
 .checkoutpage__userInfo {
-  background-color: #121212;
+  background-color: #3b3b3b;
   padding: 1rem;
   padding-bottom: 1.5rem;
   border-radius: 10px;
@@ -35,7 +35,7 @@
 .checkoutpage__emailContainer {
   display: flex;
   justify-content: space-between;
-  color: #f1f1f1;
+  color: #f7f7f7;
   margin-bottom: 1rem;
 }
 

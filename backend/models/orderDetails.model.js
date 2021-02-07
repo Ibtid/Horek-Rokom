@@ -9,9 +9,9 @@ const OrderDetails = function (orderDetails) {
 
 OrderDetails.create = (newOrderDetails, result) => {
   sql.query(
-    'CALL insertOrderDetails(?, ?, ?)',
+    'CALL insertOrderDetails(?, ?)',
     [
-      newOrderDetails.orderID,
+      /*newOrderDetails.orderID,*/
       newOrderDetails.productID,
       newOrderDetails.userID,
     ],

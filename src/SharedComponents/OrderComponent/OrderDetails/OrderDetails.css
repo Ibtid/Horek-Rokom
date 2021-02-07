@@ -1,5 +1,5 @@
 .orderDetails {
-  background-color: #f1f1f1;
+  background-color: #3b3b3b;
   height: auto;
   transition: height 0.3s ease-out;
   border-radius: 0px 0px 10px 10px;
@@ -11,5 +11,6 @@
 
 .orderDetails__products {
   display: flex;
+  background-color: #3b3b3b;
   flex-direction: row;
 }

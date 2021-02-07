@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
 .cartSummary {
-  background-color: #121212;
-  color: #f1f5f5;
-  font-family: 'PT Sans', sans-serif;
+  background-color: #3b3b3b;
+  color: #ffcc55;
+  font-family: 'Averia Serif Libre', cursive;
   position: absolute;
   width: 100%;
   top: -30rem;
@@ -19,7 +17,7 @@
   padding: 0.7rem 1rem;
   font-size: 1.5rem;
   border-bottom: 1px solid;
-  border-color: #f1f5f5;
+  border-color: #3b3b3b;
   display: flex;
   align-items: center;
 }
@@ -33,7 +31,7 @@
   font-size: 0.7rem;
   text-decoration: underline;
   border-bottom: 1px solid;
-  border-color: #f1f5f5;
+  border-color: #3b3b3b;
 }
 
 .cartSummary__items {
@@ -42,7 +40,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
-  border-color: #f1f5f5;
+  border-color: #3b3b3b;
 }
 
 .cartSummary__subtotal {
@@ -51,7 +49,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
-  border-color: #f1f5f5;
+  border-color: #3b3b3b;
 }
 
 .cartSummary__shipping {
@@ -60,7 +58,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
-  border-color: #f1f5f5;
+  border-color: #3b3b3b;
 }
 
 .cartSummary__tax {
@@ -69,7 +67,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
-  border-color: #f1f5f5;
+  border-color: #3b3b3b;
 }
 
 .cartSummary__total {
@@ -78,7 +76,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
-  border-color: #f1f5f5;
+  border-color: #3b3b3b;
 }
 
 .cartSummary__button {

@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
+
 .right-side {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 70%;
-  background-color: #f15a5a;
+  background-color: #ffcc57;
   width: 100%;
   position: absolute;
   right: -34%;
-  border-radius: 6px;
+  border-radius: 0.5rem;
   z-index: 1;
   transition: all 400ms ease-in-out;
   cursor: pointer;
@@ -32,10 +33,10 @@
 }
 
 .text {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Averia Serif Libre', cursive;
   font-size: 21px;
   font-weight: 500;
-  color: #fff;
+  color: #3b3b3b;
   margin-right: 3em;
   margin-left: 3em;
 }

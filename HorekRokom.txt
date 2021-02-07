@@ -97,3 +97,71 @@ WHERE id = productID;
 INSERT INTO orderDetails VALUES(orderID,productID,productname, images,prices,userID);
 END$$
 DELIMITER ;
+
+==============================================
+DELIMITER $$
+CREATE TRIGGER TRG_GEN_ID
+BEFORE INSERT ON orders
+FOR EACH ROW
+BEGIN
+set NEW.orderID = GET_ID();
+
+END$$
+DELIMITER ;
+
+===============================================
+DELIMITER $$
+
+CREATE FUNCTION GET_ID()
+RETURNs Bigint
+Not deterministic
+begin
+
+declare var_id bigint;
+
+select max(orderID) into var_id
+from orders;
+
+if var_id is null then 
+	set var_id = Cast(('202100'||'00') AS UNSIGNED Integer);
+ELSE
+	set var_id = var_id+1;
+end if;
+
+return var_id;
+
+END$$
+DELIMITER ;
+=================================================
+DELIMITER $$
+
+CREATE PROCEDURE insertOrderdetails(productID bigint, userID varchar(95))
+BEGIN
+DECLARE productname varchar(50);
+DECLARE images longtext;
+DECLARE prices double;
+Declare Oid bigint;
+
+
+SELECT name 
+INTO productname
+FROM products
+WHERE id = productID;
+
+SELECT image
+INTO images
+FROM products
+WHERE id = productID;
+
+SELECT price
+INTO prices
+FROM products
+WHERE id = productID;
+
+select orderID into Oid from orders ORDER BY orderID DESC LIMIT 1;
+
+INSERT INTO orderDetails VALUES(Oid, productID, "Nikon", images, prices, userID);
+END$$
+DELIMITER ;
+
+===================================
