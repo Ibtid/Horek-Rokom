@@ -25,6 +25,7 @@ const CartProducts = (props) => {
       image={props.image}
       price={props.price}
       description={props.description}
+      category={props.category}
       viewIcon={viewIcon}
       deleteIcon={deleteIcon}
       removeProduct={removeProductfromCart}

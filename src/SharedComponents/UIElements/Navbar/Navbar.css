@@ -20,6 +20,12 @@
   flex: 0.6;
 }
 
+.navbar__elementGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .navbar__element {
   display: flex;
   align-items: center;
@@ -60,25 +66,31 @@
   margin: 0px;
   border-radius: 0px;
   height: 1.5rem;
+  width: 25rem;
 }
 
 .navbar__search {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0.5;
+  flex: 1;
 }
 
 .navbar__searchicon {
   height: 100%;
   background-color: #ffcc57;
   color: #3b3b3b;
+  transition: 1s ease-in-out;
 }
-
+.navbar__searchicon:hover {
+  background-color: #3b3b3b;
+  color: #ffcc57;
+}
 .navbar__searchIconDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   background-color: #ffcc57;
+  cursor: pointer;
 }

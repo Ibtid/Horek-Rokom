@@ -2,6 +2,7 @@ import React from 'react';
 import CartProducts from './CartProducts';
 import { useStateValue } from '../../StateProvider/StateProvider';
 import { v4 as uuidv4 } from 'uuid';
+import './CartProductList.css';
 
 const CartProductsList = () => {
   const [state, dispatch] = useStateValue();
@@ -16,6 +17,7 @@ const CartProductsList = () => {
           image={product.image}
           price={product.price}
           description={product.description}
+          category={product.category}
         />
       ))}
     </div>

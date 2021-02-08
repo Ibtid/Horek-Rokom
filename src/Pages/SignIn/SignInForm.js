@@ -5,7 +5,7 @@ import Login from '../../UserComponent/SignIn/LoginAndRegister/Login';
 import Register from '../../UserComponent/SignIn/LoginAndRegister/Register';
 import Service from '../../services/services';
 import { useStateValue } from '../../StateProvider/StateProvider';
-import LogoIcon from '../../Resources/Picture/Logo/LogoIcon.PNG';
+import SignInBG from '../../Resources/Picture/Background/WhatsApp Image 2021-02-08 at 7.27.43 PM.jpeg';
 
 const SignInForm = () => {
   const [isLogginActive, setisLogginActive] = useState(true);
@@ -39,6 +39,9 @@ const SignInForm = () => {
 
   return (
     <div className='SignIn'>
+      <div className='signIn__bgContainer'>
+        <img className='signIn__bg' src={SignInBG} alt='' />
+      </div>
       <div className='login'>
         <div className='container'>
           {isLogginActive && <Login />}

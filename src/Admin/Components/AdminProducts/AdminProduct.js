@@ -32,6 +32,7 @@ const AdminProduct = (props) => {
       name={props.name}
       price={props.price}
       description={props.description}
+      category={props.category}
       viewIcon={viewIcon}
       deleteIcon={deleteIcon}
     />

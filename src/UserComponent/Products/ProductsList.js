@@ -37,6 +37,7 @@ const ProductsList = () => {
             price={product.price}
             rating={product.rating}
             description={product.description}
+            category={product.category}
           />
         ))}
       </div>

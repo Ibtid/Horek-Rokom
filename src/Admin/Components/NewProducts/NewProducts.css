@@ -12,6 +12,7 @@
   color: #f7f7f7;
   padding: 1rem;
   box-shadow: 0px 0px 1px 0.8px #121212;
+  width: 30rem;
 }
 
 .newProduct__header {
@@ -27,8 +28,10 @@
 .newProduct__form {
   margin-top: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 100%;
   align-items: center;
+  justify-content: space-around;
 }
 
 .newProduct__inputSection {
@@ -71,13 +74,14 @@
   margin-bottom: 1rem;
   background-color: #f7f7f7;
   color: #3b3b3b;
-  border-radius: 50%;
-  border-style: none;
+  border: 1px solid #3b3b3b;
+  border-radius: 10px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
 .newProduct__addButton:hover {
-  background-color: #3b3b3c;
+  border: 1px solid #f7f7f7;
+  background-color: #3b3b3b;
   color: #f7f7f7;
 }
 
@@ -99,4 +103,12 @@
   border-radius: 10px 10px 10px 10px;
 
   /*border-radius: 10px 10px 10px 10px;*/
+}
+
+.newProduct__buttonInput {
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -39,17 +39,17 @@ const OrderPage = () => {
   return (
     <div className='orderPage'>
       <div className='orderPage__container'>
-        <div className='orderPage__orderList'>
-          <div>
-            <OrderList />
-          </div>
-        </div>
         <div className='orderPage__TitleImageContainer'>
           <img
             className='orderPage__TitleImage'
             src={title}
             alt='RECENT ORDERS'
           />
+        </div>
+        <div className='orderPage__orderList'>
+          <div>
+            <OrderList />
+          </div>
         </div>
       </div>
     </div>

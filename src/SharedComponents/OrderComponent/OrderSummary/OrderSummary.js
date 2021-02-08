@@ -40,7 +40,7 @@ const OrderSummary = (props) => {
           </div>
           <div className='orderSummary__segment'>
             <div className='orderSummary__title'>Amount:</div>
-            <div className='orderSummary__date'>${props.totalPrice}</div>
+            <div className='orderSummary__date'>Tk.{props.totalPrice}</div>
           </div>
         </div>
         <div className='orderSummary__orderInfo'>

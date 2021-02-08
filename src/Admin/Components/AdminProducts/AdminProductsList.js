@@ -40,6 +40,7 @@ const AdminProductsList = () => {
               image={product.image}
               price={product.price}
               description={product.description}
+              category={product.category}
             />
           ))}
       </div>

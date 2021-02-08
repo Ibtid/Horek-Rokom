@@ -23,6 +23,7 @@ const ProductCardForList = (props) => {
           name={props.name}
           price={props.price}
           description={props.description}
+          category={props.category}
         />
       )}
       {showProduct && (
@@ -46,7 +47,7 @@ const ProductCardForList = (props) => {
               </div>
               <div className='ProductCard__priceSection'>
                 Price:
-                <div className='ProductCard__price'>${props.price}</div>
+                <div className='ProductCard__price'>Tk.{props.price}</div>
               </div>
             </div>
             <div className='ProductCard__buttons'>

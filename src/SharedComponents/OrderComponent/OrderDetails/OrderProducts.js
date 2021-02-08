@@ -14,7 +14,7 @@ const OrderProducts = (props) => {
       <div className='product__footer'>
         <div className='orderproduct__info'>
           <div className='orderproduct__name'>{props.name}</div>
-          <div className='orderproduct__price'>Price: ${props.price}</div>
+          <div className='orderproduct__price'>Price: Tk.{props.price}</div>
         </div>
       </div>
     </div>

@@ -59,47 +59,49 @@ const Navbar = () => {
           </div>
         </div>
 
-        <Link to='/cart' className='navbar__element'>
-          <ShoppingCartIcon /> {totalItems}
-        </Link>
-
-        {state.currentUser.length === 1 ? (
-          <Link to='/orders' className='navbar__element order__navbar'>
-            <ListAltIcon />
-            {/*<div className='navbar__elementText'>
-              <div className='greet__text'>Returns and</div>
-              <div>Order List</div>
-        </div>*/}
+        <div className='navbar__elementGroup'>
+          <Link to='/cart' className='navbar__element'>
+            <ShoppingCartIcon /> {totalItems}
           </Link>
-        ) : (
-          <div className='order__nav'></div>
-        )}
-        {state.currentUser.length === 1 ? (
-          <div className='navbar__element' onClick={signOut}>
-            <motion.div
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className='navbar__elementText order__nav'>
-              <div className='greet__text'>
-                Hello {state.currentUser[0].username}
+          {state.currentUser.length === 1 ? (
+            <Link to='/orders' className='navbar__element'>
+              <ListAltIcon />
+              {/*
+              <div className='navbar__elementText'>
+                <div className='greet__text'>Returns and</div>
+                <div>Order List</div>
               </div>
-              <div>Sign Out</div>
-            </motion.div>
-            <AccountCircleIcon />
-          </div>
-        ) : (
-          <Link to='/signin' className='navbar__element'>
-            <motion.div
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className='navbar__elementText order__nav'>
-              <div className='greet__text'>Hello Guest</div>
-              <div>Sign In</div>
-            </motion.div>
-
-            <AccountCircleIcon />
-          </Link>
-        )}
+            */}
+            </Link>
+          ) : (
+            <div className='order__nav'></div>
+          )}
+          {state.currentUser.length === 1 ? (
+            <div className='navbar__element' onClick={signOut}>
+              <AccountCircleIcon />
+              <motion.div
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className='navbar__elementText order__nav'>
+                <div className='greet__text'>
+                  Hello {state.currentUser[0].username}
+                </div>
+                <div>Sign Out</div>
+              </motion.div>
+            </div>
+          ) : (
+            <Link to='/signin' className='navbar__element'>
+              <AccountCircleIcon />
+              <motion.div
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className='navbar__elementText order__nav'>
+                <div className='greet__text'>Hello Guest</div>
+                <div>Sign In</div>
+              </motion.div>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

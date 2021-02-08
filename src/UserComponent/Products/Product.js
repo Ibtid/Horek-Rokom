@@ -43,6 +43,7 @@ const Product = (props) => {
           name={props.name}
           price={props.price}
           description={props.description}
+          category={props.category}
         />
       )}
       <div className='product__card'>
@@ -52,7 +53,7 @@ const Product = (props) => {
         <div className='product__footer'>
           <div className='product__info'>
             <div className='product__name'>{props.name}</div>
-            <div className='product__price'>Price: ${props.price}</div>
+            <div className='product__price'>Price: Tk.{props.price}</div>
           </div>
           <div className='product__button'>
             <Buttons

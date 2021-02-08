@@ -17,11 +17,12 @@ const Modal = (props) => {
           </div>
           <div className='modal__info'>
             <div className='modal__title'>{props.name}</div>
-            <div className='modal__price'>Price: ${props.price}</div>
+            <div className='modal__price'>Price: Tk.{props.price}</div>
             <div className='modal__description'>
               <div className='modal__descriptionTitle'>Description</div>
               <div className='modal__descriptionText'>{props.description}</div>
             </div>
+            <div className='modal__price'>Category: {props.category}</div>
             <div className='modal__buttons'>
               <Button
                 icon={closeIcon}
