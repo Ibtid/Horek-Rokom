@@ -7,6 +7,11 @@ import banner3 from '../../../../Resources/Picture/HomeBanner/banner1.jpg';
 import banner4 from '../../../../Resources/Picture/HomeBanner/banner4.jpg';
 import banner5 from '../../../../Resources/Picture/HomeBanner/banner5.jpg';
 import banner6 from '../../../../Resources/Picture/HomeBanner/banner6.jpg';
+import banner7 from '../../../../Resources/Picture/HomeBanner/BucketInAD1.PNG';
+import banner8 from '../../../../Resources/Picture/HomeBanner/BucketInAD2.PNG';
+import banner9 from '../../../../Resources/Picture/HomeBanner/BucketInAD3.PNG';
+import banner10 from '../../../../Resources/Picture/HomeBanner/BucketInAD4.PNG';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -24,19 +29,16 @@ const HomepageBanner = () => {
     <div className='homepageBanner'>
       <Slider {...settings} className='homepageBanner__container'>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner2} alt='banner' />
+          <img className='homepageBanner__image' src={banner7} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner5} alt='banner' />
+          <img className='homepageBanner__image' src={banner8} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner4} alt='banner' />
+          <img className='homepageBanner__image' src={banner10} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner6} alt='banner' />
-        </div>
-        <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner3} alt='banner' />
+          <img className='homepageBanner__image' src={banner9} alt='banner' />
         </div>
       </Slider>
     </div>

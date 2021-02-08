@@ -1,12 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
+
 .orderproduct__card {
   background-color: #616161;
-  width: 12rem;
+  width: 10rem;
   box-shadow: 0px 0px 2px 0.8px #121212;
   padding: 0rem;
   margin: 0.8rem 0.5rem;
   border-radius: 10px;
 }
 
-.product__info {
+.orderproduct__info {
+  flex: 1;
+  padding: 0.3em;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+.orderproduct__imageContainer {
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
+  height: 23vh;
+  width: 10rem;
+}
+
+.orderproduct__image {
+  height: 23vh;
+  width: 10rem;
+  border-radius: 10px 10px 0px 0px;
+  transition: 0.3s ease-in-out;
+}
+
+.orderproduct__name {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.orderproduct__price {
+  color: #ffcc55;
+  font-size: 1em;
+  font-weight: 800;
 }

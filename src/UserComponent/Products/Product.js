@@ -57,14 +57,14 @@ const Product = (props) => {
           <div className='product__button'>
             <Buttons
               icon={addProductIcon}
-              type='default'
+              type='danger'
               message=''
               onClick={addProductToCart}
             />
 
             <Buttons
               icon={viewDetailsIcon}
-              type='default'
+              type='danger'
               message=''
               onClick={() => setIsOpen(true)}
             />

@@ -6,8 +6,11 @@ import './OrderSummary.css';
 const OrderSummary = (props) => {
   const [showOrderDetails, setShowOrderDetails] = useState(false);
 
-  var productsDisplay = showOrderDetails ? 'orderDetails' : 'NO_DETAILS';
-  var collapsed = showOrderDetails ? 'not__collapsed' : 'collapsed';
+  /*var productsDisplay = showOrderDetails ? 'orderDetails' : 'NO_DETAILS';
+  var collapsed = showOrderDetails ? 'not__collapsed' : 'collapsed';*/
+
+  var productsDisplay = 'orderDetails';
+  var collapsed = 'not__collapsed';
 
   const switchOrderDetails = () => {
     setShowOrderDetails(!showOrderDetails);
@@ -18,8 +21,6 @@ const OrderSummary = (props) => {
       className='orderSummary'
       animate={{ scale: 0.93, opacity: 1 }}
       transition={{ duration: 0.3 }}
-      whileHover={{ scale: 0.96 }}
-      whileTap={{ scale: 0.9 }}
       onClick={switchOrderDetails}>
       <div className='orderSummary__container'>
         <div className='orderSummary__orderInfo'>

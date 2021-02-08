@@ -9,4 +9,7 @@ module.exports = (app) => {
 
   //Delete a Product with productID
   app.delete('/products/:productId', products.delete);
+
+  // Retrieve all products with category
+  app.get('/products/:category', products.findOne);
 };

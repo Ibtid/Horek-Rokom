@@ -9,6 +9,7 @@
   width: 90%;
   min-height: 90vh;
   display: flex;
+  justify-content: space-evenly;
 }
 
 .orderPage__TitleImageContainer {
@@ -25,7 +26,7 @@
 }
 
 .orderPage__orderList {
-  flex: 0.65;
+  flex: 0.5;
   min-height: 90vh;
   background-color: #f7f7f7;
   margin-right: 0.5rem;

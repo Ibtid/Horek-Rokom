@@ -7,6 +7,7 @@
   opacity: 0.5;
   display: flex;
   transition: all 0.5s ease-in-out;
+  max-width: 35rem;
 }
 
 .ProductCard:hover {
@@ -33,16 +34,16 @@
 }
 
 .ProductCard__imageContainer {
-  height: 25vh;
-  width: 13rem;
+  height: 20vh;
+  width: 10rem;
   border-radius: 10px 0px 0px 10px;
   cursor: pointer;
   overflow: hidden;
 }
 
 .ProductCard__image {
-  height: 25vh;
-  width: 13rem;
+  height: 20vh;
+  width: 10rem;
   border-radius: 10px 0px 0px 10px;
   transition: all 0.3s ease-in-out;
 }
@@ -59,7 +60,7 @@
 .ProductCard__titleSection {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-bottom: 2px solid;
   border-color: #121212;
 }

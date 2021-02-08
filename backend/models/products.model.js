@@ -6,6 +6,7 @@ const Products = function (products) {
   this.price = products.price;
   this.image = products.image;
   this.description = products.description;
+  this.category = products.category;
 };
 
 Products.getAll = (result) => {
@@ -47,6 +48,28 @@ Products.remove = (id, result) => {
     console.log('deleted product with id: ', id);
     result(null, res);
   });
+};
+
+Products.findByProductsByCategory = (category, result) => {
+  sql.query(
+    `SELECT * FROM products WHERE category = '${category}'`,
+    (err, res) => {
+      if (err) {
+        console.log('error: ', err);
+        result(err, null);
+        return;
+      }
+
+      if (res.length) {
+        console.log('found product: ', res);
+        result(null, res);
+        return;
+      }
+
+      // not found Customer with the id
+      result({ kind: 'not_found' }, null);
+    }
+  );
 };
 
 module.exports = Products;

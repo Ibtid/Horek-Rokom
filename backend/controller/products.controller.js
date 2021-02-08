@@ -25,6 +25,7 @@ exports.add = (req, res) => {
     price: req.body.price,
     image: req.body.image,
     description: req.body.description,
+    category: req.body.category,
   });
 
   //Save product in the database
@@ -51,5 +52,22 @@ exports.delete = (req, res) => {
         });
       }
     } else res.send({ message: `Product was deleted successfully!` });
+  });
+};
+
+exports.findOne = (req, res) => {
+  Products.findByProductsByCategory(req.params.category, (err, data) => {
+    if (err) {
+      if (err.kind === 'not_found') {
+        res.status(404).send({
+          message: `Not found Products with category ${req.params.category}.`,
+        });
+      } else {
+        res.status(500).send({
+          message:
+            'Error retrieving Products with category ' + req.params.category,
+        });
+      }
+    } else res.send(data);
   });
 };

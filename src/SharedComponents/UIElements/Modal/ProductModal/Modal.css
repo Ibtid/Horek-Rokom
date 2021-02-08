@@ -66,5 +66,8 @@
   font-size: 1.3rem;
 }
 .modal__buttons {
-  padding-left: 1rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
 }

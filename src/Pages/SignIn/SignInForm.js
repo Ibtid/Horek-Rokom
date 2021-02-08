@@ -5,6 +5,7 @@ import Login from '../../UserComponent/SignIn/LoginAndRegister/Login';
 import Register from '../../UserComponent/SignIn/LoginAndRegister/Register';
 import Service from '../../services/services';
 import { useStateValue } from '../../StateProvider/StateProvider';
+import LogoIcon from '../../Resources/Picture/Logo/LogoIcon.PNG';
 
 const SignInForm = () => {
   const [isLogginActive, setisLogginActive] = useState(true);

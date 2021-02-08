@@ -12,11 +12,12 @@
 .navbar__container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navbar__logo {
-  flex: 1;
   padding-left: 4rem;
+  flex: 0.6;
 }
 
 .navbar__element {
@@ -45,4 +46,39 @@
 
 .greet__text {
   font-size: 0.5rem;
+}
+
+.order__nav {
+  opacity: 0;
+}
+
+.order__navbar {
+  padding-left: 5rem;
+}
+
+.navbar__input {
+  margin: 0px;
+  border-radius: 0px;
+  height: 1.5rem;
+}
+
+.navbar__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
+}
+
+.navbar__searchicon {
+  height: 100%;
+  background-color: #ffcc57;
+  color: #3b3b3b;
+}
+
+.navbar__searchIconDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ffcc57;
 }

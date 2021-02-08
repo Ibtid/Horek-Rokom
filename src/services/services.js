@@ -4,6 +4,10 @@ const getAllProducts = () => {
   return http.get('/products');
 };
 
+const getAllProductsByCategory = (category) => {
+  return http.get(`/products/${category}`);
+};
+
 const addNewProduct = (data) => {
   return http.post('/products', data);
 };
@@ -44,6 +48,7 @@ export default {
   getAllProducts,
   addNewProduct,
   removeProduct,
+  getAllProductsByCategory,
   addNewUser,
   getAllUser,
   addOrder,

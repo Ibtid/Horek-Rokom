@@ -12,6 +12,7 @@ const NewProduct = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState();
   const [file, setFile] = useState();
+  const [category, setCategory] = useState('');
   const [image, setImage] = useState(Preview);
   const [description, setDescription] = useState('');
 
@@ -36,6 +37,10 @@ const NewProduct = () => {
     setName(event.target.value);
   };
 
+  const handleCategory = (event) => {
+    setCategory(event.target.value);
+  };
+
   const handlePrice = (event) => {
     setPrice(event.target.value);
   };
@@ -57,6 +62,7 @@ const NewProduct = () => {
       price: price,
       image: image,
       description: description,
+      category: category,
     };
 
     Service.addNewProduct(data).then((response) => {
@@ -68,6 +74,7 @@ const NewProduct = () => {
           price: response.data.price,
           image: response.data.image,
           description: response.data.description,
+          category: response.data.category,
         },
       });
     });
@@ -75,6 +82,7 @@ const NewProduct = () => {
     setName('');
     setPrice();
     setDescription('');
+    setCategory('');
     console.log('this is products');
     console.log(state.products);
     console.log(image);
@@ -95,6 +103,20 @@ const NewProduct = () => {
             placeholder='Enter Product Name'
             value={name}
             onChange={handleName}
+          />
+        </div>
+        <div className='newProduct__inputSection'>
+          <label className='newProduct__inputLabel' htmlFor='name'>
+            Category
+          </label>
+          <input
+            type='text'
+            className='newProduct__input'
+            id='category'
+            name='category'
+            placeholder='Enter Category Name'
+            value={category}
+            onChange={handleCategory}
           />
         </div>
         <div className='newProduct__inputSection'>
