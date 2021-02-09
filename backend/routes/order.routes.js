@@ -19,4 +19,7 @@ module.exports = (app) => {
 
   // Retrieve OrderDetails with orderId
   app.get('/orderDetails/:userID', orderDetails.findOne);
+
+  //updateDelivery
+  app.put('/updateDelievery', orders.updateDelievery);
 };

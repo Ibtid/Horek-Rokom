@@ -19,6 +19,7 @@ const OrderList = () => {
             items={orders.totalItem}
             totalPrice={orders.totalPrice}
             date={orders.orderDate}
+            delivered={orders.delievered}
           />
         ))}
       </div>

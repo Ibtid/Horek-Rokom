@@ -2,6 +2,7 @@ import React from 'react';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 import './OrderDetails.css';
 import OrderProducts from './OrderProducts';
+import { v4 as uuidv4 } from 'uuid';
 
 const OrderDetails = (props) => {
   const [state, dispatch] = useStateValue();
@@ -15,7 +16,7 @@ const OrderDetails = (props) => {
       <div className='orderDetails__products'>
         {orderProducts?.map((productsInfo) => (
           <OrderProducts
-            key={productsInfo.productId}
+            key={uuidv4()}
             productId={productsInfo.productId}
             image={productsInfo.image}
             name={productsInfo.productname}

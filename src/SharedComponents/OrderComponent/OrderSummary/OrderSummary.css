@@ -5,7 +5,6 @@
   color: #eeecec;
   background-color: #ffcc57;
   margin: 1rem;
-  cursor: pointer;
   opacity: 0;
   width: 40rem;
 }
@@ -19,6 +18,7 @@
   margin-left: 0.7rem;
   justify-content: space-between;
   max-width: 100%;
+  align-items: center;
 }
 
 .orderSummary__orderDetails {
@@ -35,6 +35,7 @@
 .orderSummary__orderInfo {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .orderSummary__title {
@@ -45,4 +46,15 @@
 .orderSummary__segment {
   display: flex;
   padding: 0.2rem;
+}
+
+.orderSummary__delieveryStatus {
+  padding: 0.5rem;
+  display: flex;
+}
+
+.orderSummary__deliver {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

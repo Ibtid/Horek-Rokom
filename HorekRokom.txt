@@ -35,6 +35,7 @@ constraint unique_cust_username unique(username),
 constraint unique_cust_email unique(email)
 );
 
+
 ---Function to create the custID---
 CREATE FUNCTION createCustID (username varchar(65), email varchar(30))
 returns varchar(95) deterministic
@@ -52,6 +53,8 @@ orderDate date default(CURRENT_TIMESTAMP),
 constraint pk_order primary key(orderID),
 constraint fk_order foreign key(userID) references customers(custID)
 );
+
+Alter table orders modify column delievered varchar(10); 
 
 
 ====================================create OrderDetails Table
@@ -160,7 +163,7 @@ WHERE id = productID;
 
 select orderID into Oid from orders ORDER BY orderID DESC LIMIT 1;
 
-INSERT INTO orderDetails VALUES(Oid, productID, "Nikon", images, prices, userID);
+INSERT INTO orderDetails VALUES(Oid, productID, productname, images, prices, userID);
 END$$
 DELIMITER ;
 

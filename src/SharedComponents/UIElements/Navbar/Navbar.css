@@ -67,6 +67,7 @@
   border-radius: 0px;
   height: 1.5rem;
   width: 25rem;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .navbar__search {
@@ -81,6 +82,7 @@
   background-color: #ffcc57;
   color: #3b3b3b;
   transition: 1s ease-in-out;
+  border-radius: 0px 5px 5px 0px;
 }
 .navbar__searchicon:hover {
   background-color: #3b3b3b;
@@ -93,4 +95,5 @@
   height: 100%;
   background-color: #ffcc57;
   cursor: pointer;
+  border-radius: 0px 5px 5px 0px;
 }

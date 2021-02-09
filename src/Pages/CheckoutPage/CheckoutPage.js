@@ -28,7 +28,7 @@ const CheckoutPage = () => {
       address: address,
       totalItem: cart.length,
       totalPrice: cartSummary.total,
-      delivered: 0,
+      delievered: 'Not Delivered',
     };
     Service.addOrder(data).then((response) => {
       console.log(response);
@@ -126,7 +126,7 @@ const CheckoutPage = () => {
                 stripeKey='pk_test_51HZDOcHKFvH5Oe64NcisIbwlEP1GXpFzpIWKhNeM6Qj6rgbFsHfxwJNFHyFXXtkfSosJZsbq2hLBE1nUWJMOmyl700jMbS2Mwn'
                 token={makePayment}
                 name='Card Info'
-                currency='USD'
+                currency='BDT'
                 amount={cartSummary.total * 100}>
                 <Button
                   type='danger'

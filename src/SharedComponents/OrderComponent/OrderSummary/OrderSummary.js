@@ -1,19 +1,51 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import OrderDetails from '../OrderDetails/OrderDetails';
+import Button from '../../UIElements/Buttons/Buttons';
+import Service from '../../../services/services';
+import { useStateValue } from '../../../StateProvider/StateProvider';
+import CancelIcon from '@material-ui/icons/Cancel';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import './OrderSummary.css';
 
 const OrderSummary = (props) => {
   const [showOrderDetails, setShowOrderDetails] = useState(false);
 
+  const [state, dispatch] = useStateValue();
   /*var productsDisplay = showOrderDetails ? 'orderDetails' : 'NO_DETAILS';
   var collapsed = showOrderDetails ? 'not__collapsed' : 'collapsed';*/
+
+  var deliverIcon =
+    props.delivered === 'Not Delivered' ? <CancelIcon /> : <CheckCircleIcon />;
 
   var productsDisplay = 'orderDetails';
   var collapsed = 'not__collapsed';
 
   const switchOrderDetails = () => {
     setShowOrderDetails(!showOrderDetails);
+  };
+
+  const handleDelivery = () => {
+    var data = {
+      orderID: props.orderID,
+      userID: props.userID,
+      address: props.address,
+      totalItem: props.items,
+      totalPrice: props.totalPrice,
+      orderDate: props.date,
+      delievered: 'Delivered',
+    };
+    Service.updateDelivery(data).then((response) => {
+      Service.getOrderById(props.userID).then((response) => {
+        console.log(response.data);
+        dispatch({
+          type: 'CREATE_ORDER',
+          order: response.data,
+        });
+      });
+      console.log(state.order);
+    });
+    console.log(state.order);
   };
 
   return (
@@ -52,6 +84,20 @@ const OrderSummary = (props) => {
             <div className='orderSummary__title'>Purchased:</div>
             <div className='orderSummary__date'>x{props.items}</div>
           </div>
+        </div>
+        <div className='orderSummary__delieveryStatus'>
+          <div className='orderSummary__title'>Delivery Status:</div>
+          <div className='orderSummary__deliver'>
+            {props.delivered}
+            {deliverIcon}
+          </div>
+        </div>
+        <div className='orderSummary__delieveryStatus'>
+          <Button
+            type='danger'
+            message='Click to confirm Delivery'
+            onClick={handleDelivery}
+          />
         </div>
         <div className={`orderSummary__orderDetails ${collapsed}`}>
           <OrderDetails

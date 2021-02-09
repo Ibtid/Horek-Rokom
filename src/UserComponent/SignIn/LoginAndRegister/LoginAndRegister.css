@@ -80,10 +80,11 @@ input:focus {
   border-radius: 3px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
+  font-weight: 550;
 }
 .btn:hover {
   background-color: #f1f5f5;
-  color: #f15a5a;
+  color: #3b3b3b;
 }
 .btn:focus {
   outline: none;

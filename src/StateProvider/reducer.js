@@ -1,5 +1,3 @@
-import toast from 'react-hot-toast';
-
 export const initialState = {
   products: [],
   cart: [],
@@ -137,7 +135,16 @@ const reducer = (state, action) => {
         ...state,
         orderDetails: [action.orderDetails],
       };
-
+    case 'UPDATE_ORDER':
+      state.order.map((order) => {
+        if (order.orderID === action.orderID) {
+          order.delievered = action.delievered;
+        }
+      });
+      console.log(state.order);
+      return {
+        ...state,
+      };
     default:
       return state;
   }

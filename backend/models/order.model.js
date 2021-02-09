@@ -8,6 +8,7 @@ const Order = function (order) {
   this.totalItem = order.totalItem;
   this.totalPrice = order.totalPrice;
   this.delievered = order.delievered;
+  this.orderDate = order.orderDate;
 };
 
 Order.create = (newOrder, result) => {
@@ -64,6 +65,23 @@ Order.findByOrderID = (userID, result) => {
     // not found Customer with the id
     result({ kind: 'not_found' }, null);
   });
+};
+
+Order.updateDelivery = (newOrder, result) => {
+  sql.query(
+    'UPDATE orders SET delievered = ? where orderID = ? ',
+    [newOrder.delievered, newOrder.orderID],
+    (err, res) => {
+      if (err) {
+        console.log('error: ', err);
+        result(err, null);
+        return;
+      }
+      console.log(res);
+      console.log('updated order: ', { ...newOrder });
+      result(null, { ...newOrder });
+    }
+  );
 };
 
 module.exports = Order;

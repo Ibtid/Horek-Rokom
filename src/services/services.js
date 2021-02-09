@@ -44,6 +44,11 @@ const getAllOrders = () => {
 const getAllOrdersDetails = () => {
   return http.get('/orderDetails');
 };
+
+const updateDelivery = (data) => {
+  return http.put('/updateDelievery', data);
+};
+
 export default {
   getAllProducts,
   addNewProduct,
@@ -57,4 +62,5 @@ export default {
   getOrderDetailsById,
   getAllOrders,
   getAllOrdersDetails,
+  updateDelivery,
 };

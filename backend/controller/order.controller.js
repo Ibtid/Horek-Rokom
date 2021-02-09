@@ -53,3 +53,28 @@ exports.findOne = (req, res) => {
     } else res.send(data);
   });
 };
+
+//Update delievery
+exports.updateDelievery = (req, res) => {
+  if (!req.body) {
+    res.status(400).send({
+      message: 'Content can not be empty!',
+    });
+  }
+  const order = new Order({
+    orderID: req.body.orderID,
+    userID: req.body.userID,
+    address: req.body.address,
+    totalItem: req.body.totalItem,
+    totalPrice: req.body.totalPrice,
+    delievered: req.body.delievered,
+    orderDate: req.body.orderDate,
+  });
+  Order.updateDelivery(order, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || 'Some error occurred while updating the Order.',
+      });
+    else res.send(data);
+  });
+};

@@ -19,7 +19,7 @@ module.exports = (app) => {
         stripe.charges.create(
           {
             amount: cartSummary.total * 100,
-            currency: 'usd',
+            currency: 'bdt',
             customer: customer.id,
             receipt_email: token.email,
           },
