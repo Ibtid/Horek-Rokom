@@ -109,18 +109,6 @@ const CheckoutPage = () => {
                 onChange={handleAddress}
               />
             </div>
-            <div className='checkoutpage__inputSection'>
-              <label className='checkoutpage__inputLabel'>
-                Billing Address:
-              </label>
-              <input
-                type='text'
-                className='checkoutpage__input'
-                id='bill'
-                name='name'
-                placeholder='Enter Billing Address'
-              />
-            </div>
             <div className='checkoutpage__Button'>
               <StripeCheckout
                 stripeKey='pk_test_51HZDOcHKFvH5Oe64NcisIbwlEP1GXpFzpIWKhNeM6Qj6rgbFsHfxwJNFHyFXXtkfSosJZsbq2hLBE1nUWJMOmyl700jMbS2Mwn'

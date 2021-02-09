@@ -10,8 +10,8 @@
   padding: 4rem 3.5rem 3rem 3.5rem;
   text-align: center;
   background-color: #3b3b3b;
-  border-radius: 10px;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35), 0 1rem;
+  border-radius: 50px;
+  box-shadow: 0 0.5rem 0.5rem 0.1rem;
 }
 
 .admin__main__text {

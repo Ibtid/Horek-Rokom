@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Logo from '../../Images/Logo/Logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
@@ -9,11 +9,11 @@ import './Navbar.css';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 import SearchIcon from '@material-ui/icons/Search';
 import Service from '../../../services/services';
-import { responsiveFontSizes } from '@material-ui/core';
 
 const Navbar = () => {
   const [state, dispatch] = useStateValue();
   const [category, setCategory] = useState('');
+  let history = useHistory();
 
   const handleCategory = (event) => {
     setCategory(event.target.value);
@@ -35,6 +35,7 @@ const Navbar = () => {
       type: 'LOGOUT',
     });
     alert('LOGGED OUT');
+    history.push('/');
   };
   console.log(state);
   return (
@@ -50,7 +51,7 @@ const Navbar = () => {
             type='text'
             id='category'
             name='category'
-            placeholder='Enter Category Name'
+            placeholder='Search with Category i.e Electronics, Clothes, Accessories etc'
             value={category}
             onChange={handleCategory}
           />
@@ -74,29 +75,29 @@ const Navbar = () => {
             */}
             </Link>
           ) : (
-            <div className='order__nav'></div>
+            <div></div>
           )}
           {state.currentUser.length === 1 ? (
             <div className='navbar__element' onClick={signOut}>
-              <AccountCircleIcon />
+              {/*<AccountCircleIcon />*/}
               <motion.div
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
                 className='navbar__elementText order__nav'>
-                <div className='greet__text'>
+                {/*<div className='greet__text'>
                   Hello {state.currentUser[0].username}
-                </div>
+          </div>*/}
                 <div>Sign Out</div>
               </motion.div>
             </div>
           ) : (
             <Link to='/signin' className='navbar__element'>
-              <AccountCircleIcon />
+              {/*<AccountCircleIcon />*/}
               <motion.div
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
                 className='navbar__elementText order__nav'>
-                <div className='greet__text'>Hello Guest</div>
+                {/*<div className='greet__text'>Hello Guest</div>*/}
                 <div>Sign In</div>
               </motion.div>
             </Link>

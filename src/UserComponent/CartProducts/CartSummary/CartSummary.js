@@ -14,7 +14,7 @@ const CartSummary = () => {
     return (accumulator = accumulator + parseInt(product.price));
   }, 0);
 
-  const shipping = state.cart.length * 50;
+  const shipping = state.cart.length * 10;
   const tax = 0.1 * subtotal;
   const total = tax + subtotal + shipping;
   const forward = <ForwardIcon />;

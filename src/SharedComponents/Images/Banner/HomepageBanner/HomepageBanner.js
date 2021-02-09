@@ -19,7 +19,7 @@ const HomepageBanner = () => {
   var settings = {
     dots: false,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 2000,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -29,10 +29,10 @@ const HomepageBanner = () => {
     <div className='homepageBanner'>
       <Slider {...settings} className='homepageBanner__container'>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner7} alt='banner' />
+          <img className='homepageBanner__image' src={banner8} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner8} alt='banner' />
+          <img className='homepageBanner__image' src={banner7} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
           <img className='homepageBanner__image' src={banner10} alt='banner' />

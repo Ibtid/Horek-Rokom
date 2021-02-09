@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   background-color: #3b3b3b;
-  padding: 0.3rem;
+  padding: 0rem 0.3rem 0.3rem 0.3rem;
   margin-right: 0.7rem;
   margin-left: 0.7rem;
   justify-content: space-between;
@@ -49,10 +49,10 @@
 }
 
 .orderSummary__delieveryStatus {
-  margin: 1rem;
+  margin: 0rem;
   padding: 0.5rem;
   display: flex;
-  border-radius: 1rem;
+  border-radius: 0rem 0rem 1rem 1rem;
 }
 
 .orderSummary__deliver {
@@ -67,9 +67,17 @@
 
 .Red__div {
   background-color: #ef802f;
+  margin-bottom: 1rem;
+  color: #3b3b3b;
 }
 
 .White__div {
   background-color: #f7f7f7;
   color: #3b3b3b;
+  margin-bottom: 1rem;
+}
+
+.orderSummary__delieveryStatusButton {
+  margin-bottom: 1.5rem;
+  padding: 0px;
 }

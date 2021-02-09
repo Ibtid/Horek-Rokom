@@ -36,6 +36,8 @@ const OrderPage = () => {
     console.log(state.orderDetails);
   };
 
+  console.log(state.order);
+
   return (
     <div className='orderPage'>
       <div className='orderPage__container'>
@@ -47,9 +49,13 @@ const OrderPage = () => {
           />
         </div>
         <div className='orderPage__orderList'>
-          <div>
-            <OrderList />
-          </div>
+          {state.order.length === 0 ? (
+            <div className='no__order'>No Orders Yet</div>
+          ) : (
+            <div>
+              <OrderList />
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -44,6 +44,8 @@ const Product = (props) => {
           price={props.price}
           description={props.description}
           category={props.category}
+          isHomePage='yes'
+          addProductToCart={addProductToCart}
         />
       )}
       <div className='product__card'>
@@ -53,7 +55,7 @@ const Product = (props) => {
         <div className='product__footer'>
           <div className='product__info'>
             <div className='product__name'>{props.name}</div>
-            <div className='product__price'>Price: Tk.{props.price}</div>
+            <div className='product__price'>Tk. {props.price}</div>
           </div>
           <div className='product__button'>
             <Buttons

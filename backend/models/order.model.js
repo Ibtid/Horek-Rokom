@@ -36,7 +36,7 @@ Order.create = (newOrder, result) => {
 };
 
 Order.getAll = (result) => {
-  sql.query('SELECT * FROM orders', (err, res) => {
+  sql.query('SELECT * FROM orders ORDER BY orderID DESC', (err, res) => {
     if (err) {
       console.log('error: ', err);
       result(null, err);

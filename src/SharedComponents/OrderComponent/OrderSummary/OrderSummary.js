@@ -61,11 +61,19 @@ const OrderSummary = (props) => {
       onClick={switchOrderDetails}>
       <div className='orderSummary__container'>
         <div className={`orderSummary__delieveryStatus ${deliverStatus}`}>
-          <div className='orderSummary__title'>Delivery Status:</div>
+          <div className='orderSummary__title'>Deliver Status:</div>
           <div className='orderSummary__deliver'>
             {props.delivered}
             {deliverIcon}
           </div>
+        </div>
+        <div
+          className={`orderSummary__delieveryStatusButton ${showButton} ${deliverButton}`}>
+          <Button
+            type='danger'
+            message='Click to confirm Delivery'
+            onClick={handleDelivery}
+          />
         </div>
         <div className='orderSummary__orderInfo'>
           <div className='orderSummary__segment'>
@@ -98,14 +106,6 @@ const OrderSummary = (props) => {
           </div>
         </div>
 
-        <div
-          className={`orderSummary__delieveryStatus ${showButton} ${deliverButton}`}>
-          <Button
-            type='danger'
-            message='Click to confirm Delivery'
-            onClick={handleDelivery}
-          />
-        </div>
         <div className={`orderSummary__orderDetails ${collapsed}`}>
           <OrderDetails
             productsDisplay={productsDisplay}

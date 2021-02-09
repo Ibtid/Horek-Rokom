@@ -16,7 +16,7 @@
 
 .modal__container {
   display: flex;
-  background-color: #f1f5f5;
+  background-color: #f7f7f7;
   justify-content: space-between;
   width: 80%;
   height: 80vh;
@@ -47,12 +47,22 @@
   font-size: 2rem;
   padding: 1rem;
   font-weight: 800;
+  color: #3b3b3b;
 }
 
 .modal__price {
   font-size: 1.1rem;
   font-weight: 600;
   padding-left: 1rem;
+  color: #ef802f;
+}
+
+.modal__Category {
+  font-size: 1.1rem;
+  padding-left: 1rem;
+  font-weight: 600;
+  color: #3b3b3b;
+  margin-top: 1rem;
 }
 
 .modal__description {
@@ -60,6 +70,7 @@
   flex-direction: column;
   padding: 1rem;
   flex: 1;
+  color: #3b3b3b;
 }
 .modal__descriptionTitle {
   font-weight: 800;
@@ -70,4 +81,12 @@
   align-items: center;
   display: flex;
   justify-content: flex-end;
+}
+
+.SHOW {
+  margin-right: 1rem;
+}
+
+.DONT__SHOW {
+  display: none;
 }
