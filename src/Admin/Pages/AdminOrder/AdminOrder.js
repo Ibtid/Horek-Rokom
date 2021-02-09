@@ -38,7 +38,7 @@ const AdminOrder = () => {
       <Header />
       <div className='admin__OrderPage'>
         <div className='admin__OrderPageContainer'>
-          <OrderList />
+          <OrderList isAdmin='yes' />
         </div>
       </div>
     </div>

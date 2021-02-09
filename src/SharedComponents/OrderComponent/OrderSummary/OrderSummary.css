@@ -49,12 +49,27 @@
 }
 
 .orderSummary__delieveryStatus {
+  margin: 1rem;
   padding: 0.5rem;
   display: flex;
+  border-radius: 1rem;
 }
 
 .orderSummary__deliver {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.No {
+  display: none;
+}
+
+.Red__div {
+  background-color: #ef802f;
+}
+
+.White__div {
+  background-color: #f7f7f7;
+  color: #3b3b3b;
 }

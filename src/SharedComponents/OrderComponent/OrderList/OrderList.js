@@ -3,7 +3,7 @@ import './OrderList.css';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import { useStateValue } from '../../../StateProvider/StateProvider';
 
-const OrderList = () => {
+const OrderList = (props) => {
   const [state, dispatch] = useStateValue();
   console.log(state.order[0]);
 
@@ -20,6 +20,7 @@ const OrderList = () => {
             totalPrice={orders.totalPrice}
             date={orders.orderDate}
             delivered={orders.delievered}
+            isAdmin={props.isAdmin}
           />
         ))}
       </div>

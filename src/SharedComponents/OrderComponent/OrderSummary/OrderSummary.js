@@ -12,11 +12,16 @@ const OrderSummary = (props) => {
   const [showOrderDetails, setShowOrderDetails] = useState(false);
 
   const [state, dispatch] = useStateValue();
-  /*var productsDisplay = showOrderDetails ? 'orderDetails' : 'NO_DETAILS';
-  var collapsed = showOrderDetails ? 'not__collapsed' : 'collapsed';*/
+
+  var showButton = props.isAdmin ? 'No' : 'Yes';
 
   var deliverIcon =
     props.delivered === 'Not Delivered' ? <CancelIcon /> : <CheckCircleIcon />;
+
+  var deliverStatus =
+    props.delivered === 'Not Delivered' ? 'Red__div' : 'White__div';
+
+  var deliverButton = props.delivered === 'Not Delivered' ? 'Yes' : 'No';
 
   var productsDisplay = 'orderDetails';
   var collapsed = 'not__collapsed';
@@ -55,6 +60,13 @@ const OrderSummary = (props) => {
       transition={{ duration: 0.3 }}
       onClick={switchOrderDetails}>
       <div className='orderSummary__container'>
+        <div className={`orderSummary__delieveryStatus ${deliverStatus}`}>
+          <div className='orderSummary__title'>Delivery Status:</div>
+          <div className='orderSummary__deliver'>
+            {props.delivered}
+            {deliverIcon}
+          </div>
+        </div>
         <div className='orderSummary__orderInfo'>
           <div className='orderSummary__segment'>
             <div className='orderSummary__title'>Order ID:</div>
@@ -85,14 +97,9 @@ const OrderSummary = (props) => {
             <div className='orderSummary__date'>x{props.items}</div>
           </div>
         </div>
-        <div className='orderSummary__delieveryStatus'>
-          <div className='orderSummary__title'>Delivery Status:</div>
-          <div className='orderSummary__deliver'>
-            {props.delivered}
-            {deliverIcon}
-          </div>
-        </div>
-        <div className='orderSummary__delieveryStatus'>
+
+        <div
+          className={`orderSummary__delieveryStatus ${showButton} ${deliverButton}`}>
           <Button
             type='danger'
             message='Click to confirm Delivery'
