@@ -3,15 +3,17 @@
 .admin__main {
   display: grid;
   place-items: center;
-  background-color: #f7f7f7;
+  /*background-color: #f7f7f7;*/
   height: 100vh;
+  overflow: hidden;
 }
 .login__container {
   padding: 4rem 3.5rem 3rem 3.5rem;
   text-align: center;
   background-color: #3b3b3b;
-  border-radius: 50px;
-  box-shadow: 0 0.5rem 0.5rem 0.1rem;
+  border-radius: 10px;
+  box-shadow: 0 0.1rem 0.1rem 0.1rem;
+  margin-bottom: 10vh;
 }
 
 .admin__main__text {
@@ -35,4 +37,13 @@
 
 .admin__Link {
   text-decoration: none;
+}
+
+.admin__imageContainer {
+  margin: -100vh;
+  z-index: -100;
+}
+.admin__image {
+  margin: -100vh;
+  z-index: -100;
 }

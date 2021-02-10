@@ -70,6 +70,7 @@ const CheckoutPage = () => {
         console.log('STATUS ', status);
         createOrder();
         emptyCart();
+        history.push('/orders');
         /*if (status === 200) {
           createOrder();
           emptyCart();

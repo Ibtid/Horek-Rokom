@@ -51,12 +51,11 @@ function App() {
         toastOptions={{
           style: {
             margin: '0vh 0vh 6vh 0vh ',
-            background: '#1f1f1f',
-            color: '#ffcc57',
+            background: '#ffcc57',
+            color: '#3b3b3b',
             fontWeight: '600',
             zIndex: -100,
             fontSize: '1rem',
-            opacity: '0.5',
           },
           duration: 2500,
         }}

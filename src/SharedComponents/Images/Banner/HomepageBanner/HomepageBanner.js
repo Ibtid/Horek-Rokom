@@ -29,16 +29,22 @@ const HomepageBanner = () => {
     <div className='homepageBanner'>
       <Slider {...settings} className='homepageBanner__container'>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner8} alt='banner' />
+          <img className='homepageBanner__image' src={banner1} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner7} alt='banner' />
+          <img className='homepageBanner__image' src={banner2} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner10} alt='banner' />
+          <img className='homepageBanner__image' src={banner3} alt='banner' />
         </div>
         <div className='homepageBanner__imageContainer'>
-          <img className='homepageBanner__image' src={banner9} alt='banner' />
+          <img className='homepageBanner__image' src={banner4} alt='banner' />
+        </div>
+        <div className='homepageBanner__imageContainer'>
+          <img className='homepageBanner__image' src={banner5} alt='banner' />
+        </div>
+        <div className='homepageBanner__imageContainer'>
+          <img className='homepageBanner__image' src={banner6} alt='banner' />
         </div>
       </Slider>
     </div>
